@@ -13,6 +13,11 @@ namespace Permanence
         public static SqlCommand cmd = new SqlCommand("", cnx);
         public static SqlDataReader rd;
         public static DataTable dt = new DataTable();
+        public static string  globalvadmin="" ;
+        public static string globalvagent="";
+
+
+
         void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup

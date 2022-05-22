@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="PermanenceConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PermanenceConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.PermanenceConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vurgTableAdapter" GeneratorDataComponentClassName="vurgTableAdapter" Name="vurg" UserDataComponentName="vurgTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PermanenceConnectionString (Web.config)" DbObjectName="Permanence.dbo.vurg" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT nomniveau, idpermanence, matricule, nomagent, prenomagent, validation, nomentity, nomf, datedebut, datefin FROM dbo.vurg</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nomniveau" DataSetColumn="nomniveau" />
+              <Mapping SourceColumn="idpermanence" DataSetColumn="idpermanence" />
+              <Mapping SourceColumn="matricule" DataSetColumn="matricule" />
+              <Mapping SourceColumn="nomagent" DataSetColumn="nomagent" />
+              <Mapping SourceColumn="prenomagent" DataSetColumn="prenomagent" />
+              <Mapping SourceColumn="validation" DataSetColumn="validation" />
+              <Mapping SourceColumn="nomentity" DataSetColumn="nomentity" />
+              <Mapping SourceColumn="nomf" DataSetColumn="nomf" />
+              <Mapping SourceColumn="datedebut" DataSetColumn="datedebut" />
+              <Mapping SourceColumn="datefin" DataSetColumn="datefin" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vurg" msprop:Generator_TableClassName="vurgDataTable" msprop:Generator_TableVarName="tablevurg" msprop:Generator_TablePropName="vurg" msprop:Generator_RowDeletingName="vurgRowDeleting" msprop:Generator_RowChangingName="vurgRowChanging" msprop:Generator_RowEvHandlerName="vurgRowChangeEventHandler" msprop:Generator_RowDeletedName="vurgRowDeleted" msprop:Generator_UserTableName="vurg" msprop:Generator_RowChangedName="vurgRowChanged" msprop:Generator_RowEvArgName="vurgRowChangeEvent" msprop:Generator_RowClassName="vurgRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nomniveau" msprop:Generator_ColumnVarNameInTable="columnnomniveau" msprop:Generator_ColumnPropNameInRow="nomniveau" msprop:Generator_ColumnPropNameInTable="nomniveauColumn" msprop:Generator_UserColumnName="nomniveau" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idpermanence" msprop:Generator_ColumnVarNameInTable="columnidpermanence" msprop:Generator_ColumnPropNameInRow="idpermanence" msprop:Generator_ColumnPropNameInTable="idpermanenceColumn" msprop:Generator_UserColumnName="idpermanence" type="xs:int" />
+              <xs:element name="matricule" msprop:Generator_ColumnVarNameInTable="columnmatricule" msprop:Generator_ColumnPropNameInRow="matricule" msprop:Generator_ColumnPropNameInTable="matriculeColumn" msprop:Generator_UserColumnName="matricule" type="xs:int" />
+              <xs:element name="nomagent" msprop:Generator_ColumnVarNameInTable="columnnomagent" msprop:Generator_ColumnPropNameInRow="nomagent" msprop:Generator_ColumnPropNameInTable="nomagentColumn" msprop:Generator_UserColumnName="nomagent" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="prenomagent" msprop:Generator_ColumnVarNameInTable="columnprenomagent" msprop:Generator_ColumnPropNameInRow="prenomagent" msprop:Generator_ColumnPropNameInTable="prenomagentColumn" msprop:Generator_UserColumnName="prenomagent" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="validation" msprop:Generator_ColumnVarNameInTable="columnvalidation" msprop:Generator_ColumnPropNameInRow="validation" msprop:Generator_ColumnPropNameInTable="validationColumn" msprop:Generator_UserColumnName="validation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nomentity" msprop:Generator_ColumnVarNameInTable="columnnomentity" msprop:Generator_ColumnPropNameInRow="nomentity" msprop:Generator_ColumnPropNameInTable="nomentityColumn" msprop:Generator_UserColumnName="nomentity" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nomf" msprop:Generator_ColumnVarNameInTable="columnnomf" msprop:Generator_ColumnPropNameInRow="nomf" msprop:Generator_ColumnPropNameInTable="nomfColumn" msprop:Generator_UserColumnName="nomf" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="datedebut" msprop:Generator_ColumnVarNameInTable="columndatedebut" msprop:Generator_ColumnPropNameInRow="datedebut" msprop:Generator_ColumnPropNameInTable="datedebutColumn" msprop:Generator_UserColumnName="datedebut" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="datefin" msprop:Generator_ColumnVarNameInTable="columndatefin" msprop:Generator_ColumnPropNameInRow="datefin" msprop:Generator_ColumnPropNameInTable="datefinColumn" msprop:Generator_UserColumnName="datefin" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

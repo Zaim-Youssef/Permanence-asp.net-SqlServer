@@ -47,7 +47,15 @@
     </div>
     
     <ul class="nav navbar-nav navbar-right">
-      <li><asp:Button ID="Button1" runat="server" class="btn btn-danger navbar-btn" Text="Deconnexion" OnClick="Button1_Click1"  /></li>
+      <li>
+
+      <asp:Button ID="Button2" runat="server" class="btn btn-danger navbar-btn" Text="Log out" OnClick="Button2_Click" />
+
+      </li>
+        <li>
+            <asp:HyperLink ID="HyperLink1" runat="server" OnClick="hyperlink" NavigateUrl="~/connexionpage.aspx">HyperLink</asp:HyperLink>
+        </li>
+  
          </ul>
   </div>
 </nav>

@@ -14,28 +14,7 @@
                                     <h4 class="m-0 font-weight-bold text-primary" style="height: 21px">LISTE HISTORIQUE D'AGENT:</h4>
                                 </div>
                                 <div class="card-body">
-         <table class="w-100">
-                                        <tr><td style="width: 153px"></td></tr>
-         <tr>
-             <td style="width: 153px">
-                 <asp:Button ID="Button5" runat="server"  CssClass="btn btn-primary dropdown-toggle " Text="Recherche" Width="103px" />
-             </td>
-             
-             <td style="width: 715px">
-                 <asp:Button ID="Button6" runat="server"  CssClass="btn btn-primary dropdown-toggle " Text="Convert" style="margin-left: 15" />
-             </td>
-            
-
-                 <td style="width: 49px">
-                     <asp:Label ID="Label2" runat="server" Text="Imprimer"></asp:Label></td>
-                <td>
-                    <asp:Button ID="Button7" runat="server"  CssClass="btn btn-primary dropdown-toggle " Text="report" />
-             </td>
-                
-            
-         
-       
-     </table>   
+        
          <asp:GridView ID="GridView1"  runat="server" BackColor="White" Style="text-align:center" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4">
              <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
              <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
@@ -49,12 +28,24 @@
            </asp:GridView>
 
            <br />
-           <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+           <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                                    <br />
+                                    <table class="w-100">
+                                        <tr>
+                                            <td style="width: 225px">&nbsp;</td>
+                                            <td>
+                                                &nbsp;</td>
+                                            <td>
+                                                <asp:Button ID="Button3"  CssClass="btn btn-danger "   Height="40px" Width="90px" runat="server" OnClick="Button3_Click" Text="Retour" style="margin-left: 735px" />
+                                            </td>
+                                        </tr>
+                                    </table>
            <br />
    
     </div>
          </div>
         </div>
+        
     
     
 </asp:Content>

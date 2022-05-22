@@ -9,13 +9,22 @@
     <link href="Content/style.css" rel="stylesheet" />
     <style type="text/css">
         .auto-style1 {
-            width: 100%;
-        }
-        .auto-style2 {
-            width: 198px;
+            outline-width: medium;
+            outline-style: none;
+            outline-color: invert;
+            font-size: 16px;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: .3s ease-in-out;
+            border-style: none;
+            border-color: inherit;
+            border-width: medium;
+            margin-bottom: 20px;
+            background-color: #756cef;
         }
     </style>
-</head>
+    </head>
 <body>
   
     <div class ="loginbox">
@@ -26,18 +35,24 @@
             <asp:TextBox runat="server" CssClass="txtemail"  placeholder="entrer login" ID="txtlogin"/>
             <asp:Label Text="Password" CssClass="lblpass" runat="server" />
            
-             <asp:TextBox runat="server" CssClass="txtpass" placeholder="********" MouseLeave ="leave" TextMode="Password" ID="txtpw"/>
+             <asp:TextBox runat="server" CssClass="txtpass" placeholder="********"  TextMode="Password" ID="txtpw"/>
             <div class="card mb-4 py-3 border-bottom-primary">
                 <div class="card-body">
                     <asp:Label ID="Label2" runat="server"  ForeColor="White" Text=""></asp:Label>
+                      <asp:Button ID="btnlogin1" CssClass="btnsubmit "  runat="server" Text="Log In" OnClick="Button1_Click" />
                     </div>
                 </div>
-             <table class="auto-style1">
+             <table >
                  <tr>
-                     <td class="auto-style2">
+                     <td Width="175px" >
                          
-                             <asp:RadioButton ID="RadioButton1" runat="server" Text=" admin" ForeColor="white" GroupName="1" OnCheckedChanged="RadioButton1_CheckedChanged" /></td>
-                           <td class="auto-style2">  <asp:RadioButton ID="RadioButton2" runat="server" Text="agent" ForeColor="White" GroupName="1" OnCheckedChanged="RadioButton2_CheckedChanged" /></td>
+                           
+                             <asp:Button ID="button1" runat="server" Text="Admin"  CssClass="btnsubmit"  OnClick="Button1_Click1" Height="55px" Width="100px"  />
+                     </td>
+                           <td >  <asp:Button ID="button2" runat="server" Text="Agent"  CssClass="btnsubmit"  OnClick="Button2_Click" Height="55px" Width="100px"  /> 
+                             
+                              
+                     </td>
                          
                      
                  </tr>
@@ -50,13 +65,26 @@
                 </div>
             <div class="card mb-4 py-3 border-bottom-primary">
                 <div class="card-body">
-                      <asp:Button Text="Sign In" CssClass="btnsubmit " runat="server" OnClick="Unnamed5_Click" />
                     </div>
                 </div>
 
             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+            <br />
+           
+             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="RegularExpressionValidator" ControlToValidate="txtlogin" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"  Font-Size="9pt" Font-Underline="False" ForeColor="White" SetFocusOnError="True"> veuillez saisir un email valide</asp:RegularExpressionValidator>
+           
+            <br />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtpw" ErrorMessage="RequiredFieldValidator" Font-Size="9pt" Font-Underline="False" ForeColor="White" SetFocusOnError="True">veuillez saisir un pw </asp:RequiredFieldValidator>
+            <br />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"  ControlToValidate = "txtlogin" ErrorMessage="RequiredFieldValidator"  Font-Size="9pt" Font-Underline="False" ForeColor="White">veuillez saisir email</asp:RequiredFieldValidator>
+            <br />
+            <%--<asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="RegularExpressionValidator" SetFocusOnError="True"> avoir</asp:RegularExpressionValidator>--%>
         </form>
     </div>
+   
+    
    
 </body>
 </html>

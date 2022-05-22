@@ -10,62 +10,43 @@
 
                 <!-- Nested Row within Card Body -->
                 <div class="row">
-                    <div class="col-lg-7">
-                        <div class="p-5">
-                            <div class="user">
-                                <div class="form-group row">
-                                    <div class="text-primary">
-                                    <h1 class="h3 mb-0 text-gray-800">Dashboard :</h1></div>
-                                    <p></p>
-                                        <hr>
-                                    <table class="nav-justified">
-                                        <tr>
-                                            <td>
-                                                <table class="nav-justified">
-                                                    <tr>
-                                                        <td style="width: 146px">
-                                                            <asp:Label ID="Label2" runat="server" Text="IdPersonnel :"></asp:Label>
-                                                        &nbsp;&nbsp; &nbsp;    
-                                                        </td>
-                                                        <td>
-         <div class="col-sm-6 mb-3 mb-sm-0" style="left: 4px; top: 0px; ">
-
-                                        <asp:TextBox ID="TextBox1"  class="form-control form-control-user" runat="server" Width="85px" ReadOnly="True" ></asp:TextBox>
-
-                       </div>
-                      
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                            <td>
-                                               <table class="nav-justified">
-                                                    <tr>
-                                                        <td style="width: 132px">
-                                                            <asp:Label ID="Label3" runat="server" Text="Prenom Nom :"></asp:Label>
-                                                        </td>
-                                                        <td>
-         <div class="col-sm-6 mb-3 mb-sm-0" style="left: 29px; top: 0px; width: 66%">
-
-                                        <asp:TextBox ID="TextBox2"  class="form-control form-control-user" runat="server" Width="451px" ReadOnly="True" ></asp:TextBox>
-
-                       </div>
-                      
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                                                    </div>
+                    <div class="text-primary">
+                                    <h1 class="h3 mb-0 text-gray-800" style="margin-left: 40px">Dashboard :</h1></div>
+                      <p></p>
+                    <hr>
+       
                     </div>
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+
+                    <table class="w-100" style="height: 75px">
+                        <tr><td></td></tr>
+                        <tr>
+                            <td style="width: 26px"> &nbsp;</td>
+                            <td>
+                                <asp:Label ID="Label9" runat="server" Text="code:"></asp:Label>
+                            </td>
+                            <td style="width: 209px">
+                                <asp:TextBox ID="TextBox9" runat="server" ReadOnly="True"></asp:TextBox>
+                            </td>
+                            <td style="width: 131px">
+                                <asp:Label ID="Label10" runat="server" Text="Prenom Nom :"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="TextBox10" runat="server" ReadOnly="True" Width="325px"></asp:TextBox>
+                            </td>
+                        </tr>
+                    </table>
+
+                    
+               
+           
                 </div>
             </div>
         </div>
-
-    </div>
+        </div>
+    
+    
     
 
 
@@ -74,6 +55,8 @@
      <div class="card-header py-3">
                                      <p>
                                          <asp:Label ID="Label4" runat="server" Text=""></asp:Label>
+                                         <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+                                         <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
                                      </p>
                             
                                     <p></p>

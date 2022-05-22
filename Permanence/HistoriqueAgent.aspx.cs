@@ -7,7 +7,9 @@ namespace Permanence
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
+            //if (Page.PreviousPage != null)
+            //{
+                try
             {
                 string cm1 = Request.QueryString["cm"];
                 Console.WriteLine(cm1);
@@ -41,5 +43,23 @@ namespace Permanence
 
 
         }
+
+        protected void Button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+
+            Global.globalvadmin = "admin";
+
+            Server.Transfer("~/Default.aspx");
+        }
+        //else
+        //{
+        //    Server.Transfer("connexionpage.aspx");
+        //}
+        //}
     }
 }

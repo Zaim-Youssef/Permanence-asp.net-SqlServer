@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="PermanenceConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PermanenceConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.PermanenceConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VSDTableAdapter" GeneratorDataComponentClassName="VSDTableAdapter" Name="VSD" UserDataComponentName="VSDTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PermanenceConnectionString (Web.config)" DbObjectName="Permanence.dbo.VSD" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT idpermanence, chefdep_id, dateag, datefin, semainechar, nomniveau, nomagent, prenomagent, nomf, typepermanence, nomentity, idagent, affectation FROM dbo.VSD</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idpermanence" DataSetColumn="idpermanence" />
+              <Mapping SourceColumn="chefdep_id" DataSetColumn="chefdep_id" />
+              <Mapping SourceColumn="dateag" DataSetColumn="dateag" />
+              <Mapping SourceColumn="datefin" DataSetColumn="datefin" />
+              <Mapping SourceColumn="semainechar" DataSetColumn="semainechar" />
+              <Mapping SourceColumn="nomniveau" DataSetColumn="nomniveau" />
+              <Mapping SourceColumn="nomagent" DataSetColumn="nomagent" />
+              <Mapping SourceColumn="prenomagent" DataSetColumn="prenomagent" />
+              <Mapping SourceColumn="nomf" DataSetColumn="nomf" />
+              <Mapping SourceColumn="typepermanence" DataSetColumn="typepermanence" />
+              <Mapping SourceColumn="nomentity" DataSetColumn="nomentity" />
+              <Mapping SourceColumn="idagent" DataSetColumn="idagent" />
+              <Mapping SourceColumn="affectation" DataSetColumn="affectation" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VSHVTableAdapter" GeneratorDataComponentClassName="VSHVTableAdapter" Name="VSHV" UserDataComponentName="VSHVTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PermanenceConnectionString (Web.config)" DbObjectName="Permanence.dbo.VSHV" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT idpermanence, chefdep_id, dateag, datefin, semainechar, nomniveau, nomagent, prenomagent, nomf, typepermanence, nomentity, idagent, affectation, reseau, heured, heuref, cvehicule, matriculevehicule FROM dbo.VSHV</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idpermanence" DataSetColumn="idpermanence" />
+              <Mapping SourceColumn="chefdep_id" DataSetColumn="chefdep_id" />
+              <Mapping SourceColumn="dateag" DataSetColumn="dateag" />
+              <Mapping SourceColumn="datefin" DataSetColumn="datefin" />
+              <Mapping SourceColumn="semainechar" DataSetColumn="semainechar" />
+              <Mapping SourceColumn="nomniveau" DataSetColumn="nomniveau" />
+              <Mapping SourceColumn="nomagent" DataSetColumn="nomagent" />
+              <Mapping SourceColumn="prenomagent" DataSetColumn="prenomagent" />
+              <Mapping SourceColumn="nomf" DataSetColumn="nomf" />
+              <Mapping SourceColumn="typepermanence" DataSetColumn="typepermanence" />
+              <Mapping SourceColumn="nomentity" DataSetColumn="nomentity" />
+              <Mapping SourceColumn="idagent" DataSetColumn="idagent" />
+              <Mapping SourceColumn="affectation" DataSetColumn="affectation" />
+              <Mapping SourceColumn="reseau" DataSetColumn="reseau" />
+              <Mapping SourceColumn="heured" DataSetColumn="heured" />
+              <Mapping SourceColumn="heuref" DataSetColumn="heuref" />
+              <Mapping SourceColumn="cvehicule" DataSetColumn="cvehicule" />
+              <Mapping SourceColumn="matriculevehicule" DataSetColumn="matriculevehicule" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VSHV1TableAdapter" GeneratorDataComponentClassName="VSHV1TableAdapter" Name="VSHV1" UserDataComponentName="VSHV1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="PermanenceConnectionString (Web.config)" DbObjectName="Permanence.dbo.VSHV1" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT idpermanence, chefdep_id, dateag, datefin, semainechar, nomniveau, nomagent, prenomagent, nomf, typepermanence, nomentity, idagent, affectation, reseau, heured, heuref, cvehicule, matriculevehicule, telagent FROM dbo.VSHV1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idpermanence" DataSetColumn="idpermanence" />
+              <Mapping SourceColumn="chefdep_id" DataSetColumn="chefdep_id" />
+              <Mapping SourceColumn="dateag" DataSetColumn="dateag" />
+              <Mapping SourceColumn="datefin" DataSetColumn="datefin" />
+              <Mapping SourceColumn="semainechar" DataSetColumn="semainechar" />
+              <Mapping SourceColumn="nomniveau" DataSetColumn="nomniveau" />
+              <Mapping SourceColumn="nomagent" DataSetColumn="nomagent" />
+              <Mapping SourceColumn="prenomagent" DataSetColumn="prenomagent" />
+              <Mapping SourceColumn="nomf" DataSetColumn="nomf" />
+              <Mapping SourceColumn="typepermanence" DataSetColumn="typepermanence" />
+              <Mapping SourceColumn="nomentity" DataSetColumn="nomentity" />
+              <Mapping SourceColumn="idagent" DataSetColumn="idagent" />
+              <Mapping SourceColumn="affectation" DataSetColumn="affectation" />
+              <Mapping SourceColumn="reseau" DataSetColumn="reseau" />
+              <Mapping SourceColumn="heured" DataSetColumn="heured" />
+              <Mapping SourceColumn="heuref" DataSetColumn="heuref" />
+              <Mapping SourceColumn="cvehicule" DataSetColumn="cvehicule" />
+              <Mapping SourceColumn="matriculevehicule" DataSetColumn="matriculevehicule" />
+              <Mapping SourceColumn="telagent" DataSetColumn="telagent" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="VSD" msprop:Generator_TableClassName="VSDDataTable" msprop:Generator_TableVarName="tableVSD" msprop:Generator_TablePropName="VSD" msprop:Generator_RowDeletingName="VSDRowDeleting" msprop:Generator_RowChangingName="VSDRowChanging" msprop:Generator_RowEvHandlerName="VSDRowChangeEventHandler" msprop:Generator_RowDeletedName="VSDRowDeleted" msprop:Generator_UserTableName="VSD" msprop:Generator_RowChangedName="VSDRowChanged" msprop:Generator_RowEvArgName="VSDRowChangeEvent" msprop:Generator_RowClassName="VSDRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idpermanence" msprop:Generator_ColumnVarNameInTable="columnidpermanence" msprop:Generator_ColumnPropNameInRow="idpermanence" msprop:Generator_ColumnPropNameInTable="idpermanenceColumn" msprop:Generator_UserColumnName="idpermanence" type="xs:int" />
+              <xs:element name="chefdep_id" msprop:Generator_ColumnVarNameInTable="columnchefdep_id" msprop:Generator_ColumnPropNameInRow="chefdep_id" msprop:Generator_ColumnPropNameInTable="chefdep_idColumn" msprop:Generator_UserColumnName="chefdep_id" type="xs:int" minOccurs="0" />
+              <xs:element name="dateag" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndateag" msprop:Generator_ColumnPropNameInRow="dateag" msprop:Generator_ColumnPropNameInTable="dateagColumn" msprop:Generator_UserColumnName="dateag" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="datefin" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndatefin" msprop:Generator_ColumnPropNameInRow="datefin" msprop:Generator_ColumnPropNameInTable="datefinColumn" msprop:Generator_UserColumnName="datefin" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="semainechar" msprop:Generator_ColumnVarNameInTable="columnsemainechar" msprop:Generator_ColumnPropNameInRow="semainechar" msprop:Generator_ColumnPropNameInTable="semainecharColumn" msprop:Generator_UserColumnName="semainechar" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nomniveau" msprop:Generator_ColumnVarNameInTable="columnnomniveau" msprop:Generator_ColumnPropNameInRow="nomniveau" msprop:Generator_ColumnPropNameInTable="nomniveauColumn" msprop:Generator_UserColumnName="nomniveau" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nomagent" msprop:Generator_ColumnVarNameInTable="columnnomagent" msprop:Generator_ColumnPropNameInRow="nomagent" msprop:Generator_ColumnPropNameInTable="nomagentColumn" msprop:Generator_UserColumnName="nomagent" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="prenomagent" msprop:Generator_ColumnVarNameInTable="columnprenomagent" msprop:Generator_ColumnPropNameInRow="prenomagent" msprop:Generator_ColumnPropNameInTable="prenomagentColumn" msprop:Generator_UserColumnName="prenomagent" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nomf" msprop:Generator_ColumnVarNameInTable="columnnomf" msprop:Generator_ColumnPropNameInRow="nomf" msprop:Generator_ColumnPropNameInTable="nomfColumn" msprop:Generator_UserColumnName="nomf" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="typepermanence" msprop:Generator_ColumnVarNameInTable="columntypepermanence" msprop:Generator_ColumnPropNameInRow="typepermanence" msprop:Generator_ColumnPropNameInTable="typepermanenceColumn" msprop:Generator_UserColumnName="typepermanence" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nomentity" msprop:Generator_ColumnVarNameInTable="columnnomentity" msprop:Generator_ColumnPropNameInRow="nomentity" msprop:Generator_ColumnPropNameInTable="nomentityColumn" msprop:Generator_UserColumnName="nomentity" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idagent" msprop:Generator_ColumnVarNameInTable="columnidagent" msprop:Generator_ColumnPropNameInRow="idagent" msprop:Generator_ColumnPropNameInTable="idagentColumn" msprop:Generator_UserColumnName="idagent" type="xs:int" minOccurs="0" />
+              <xs:element name="affectation" msprop:Generator_ColumnVarNameInTable="columnaffectation" msprop:Generator_ColumnPropNameInRow="affectation" msprop:Generator_ColumnPropNameInTable="affectationColumn" msprop:Generator_UserColumnName="affectation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VSHV" msprop:Generator_TableClassName="VSHVDataTable" msprop:Generator_TableVarName="tableVSHV" msprop:Generator_TablePropName="VSHV" msprop:Generator_RowDeletingName="VSHVRowDeleting" msprop:Generator_RowChangingName="VSHVRowChanging" msprop:Generator_RowEvHandlerName="VSHVRowChangeEventHandler" msprop:Generator_RowDeletedName="VSHVRowDeleted" msprop:Generator_UserTableName="VSHV" msprop:Generator_RowChangedName="VSHVRowChanged" msprop:Generator_RowEvArgName="VSHVRowChangeEvent" msprop:Generator_RowClassName="VSHVRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idpermanence" msprop:Generator_ColumnVarNameInTable="columnidpermanence" msprop:Generator_ColumnPropNameInRow="idpermanence" msprop:Generator_ColumnPropNameInTable="idpermanenceColumn" msprop:Generator_UserColumnName="idpermanence" type="xs:int" />
+              <xs:element name="chefdep_id" msprop:Generator_ColumnVarNameInTable="columnchefdep_id" msprop:Generator_ColumnPropNameInRow="chefdep_id" msprop:Generator_ColumnPropNameInTable="chefdep_idColumn" msprop:Generator_UserColumnName="chefdep_id" type="xs:int" minOccurs="0" />
+              <xs:element name="dateag" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndateag" msprop:Generator_ColumnPropNameInRow="dateag" msprop:Generator_ColumnPropNameInTable="dateagColumn" msprop:Generator_UserColumnName="dateag" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="datefin" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndatefin" msprop:Generator_ColumnPropNameInRow="datefin" msprop:Generator_ColumnPropNameInTable="datefinColumn" msprop:Generator_UserColumnName="datefin" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="semainechar" msprop:Generator_ColumnVarNameInTable="columnsemainechar" msprop:Generator_ColumnPropNameInRow="semainechar" msprop:Generator_ColumnPropNameInTable="semainecharColumn" msprop:Generator_UserColumnName="semainechar" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nomniveau" msprop:Generator_ColumnVarNameInTable="columnnomniveau" msprop:Generator_ColumnPropNameInRow="nomniveau" msprop:Generator_ColumnPropNameInTable="nomniveauColumn" msprop:Generator_UserColumnName="nomniveau" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nomagent" msprop:Generator_ColumnVarNameInTable="columnnomagent" msprop:Generator_ColumnPropNameInRow="nomagent" msprop:Generator_ColumnPropNameInTable="nomagentColumn" msprop:Generator_UserColumnName="nomagent" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="prenomagent" msprop:Generator_ColumnVarNameInTable="columnprenomagent" msprop:Generator_ColumnPropNameInRow="prenomagent" msprop:Generator_ColumnPropNameInTable="prenomagentColumn" msprop:Generator_UserColumnName="prenomagent" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nomf" msprop:Generator_ColumnVarNameInTable="columnnomf" msprop:Generator_ColumnPropNameInRow="nomf" msprop:Generator_ColumnPropNameInTable="nomfColumn" msprop:Generator_UserColumnName="nomf" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="typepermanence" msprop:Generator_ColumnVarNameInTable="columntypepermanence" msprop:Generator_ColumnPropNameInRow="typepermanence" msprop:Generator_ColumnPropNameInTable="typepermanenceColumn" msprop:Generator_UserColumnName="typepermanence" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nomentity" msprop:Generator_ColumnVarNameInTable="columnnomentity" msprop:Generator_ColumnPropNameInRow="nomentity" msprop:Generator_ColumnPropNameInTable="nomentityColumn" msprop:Generator_UserColumnName="nomentity" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idagent" msprop:Generator_ColumnVarNameInTable="columnidagent" msprop:Generator_ColumnPropNameInRow="idagent" msprop:Generator_ColumnPropNameInTable="idagentColumn" msprop:Generator_UserColumnName="idagent" type="xs:int" minOccurs="0" />
+              <xs:element name="affectation" msprop:Generator_ColumnVarNameInTable="columnaffectation" msprop:Generator_ColumnPropNameInRow="affectation" msprop:Generator_ColumnPropNameInTable="affectationColumn" msprop:Generator_UserColumnName="affectation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="reseau" msprop:Generator_ColumnVarNameInTable="columnreseau" msprop:Generator_ColumnPropNameInRow="reseau" msprop:Generator_ColumnPropNameInTable="reseauColumn" msprop:Generator_UserColumnName="reseau" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="heured" msprop:Generator_ColumnVarNameInTable="columnheured" msprop:Generator_ColumnPropNameInRow="heured" msprop:Generator_ColumnPropNameInTable="heuredColumn" msprop:Generator_UserColumnName="heured" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="heuref" msprop:Generator_ColumnVarNameInTable="columnheuref" msprop:Generator_ColumnPropNameInRow="heuref" msprop:Generator_ColumnPropNameInTable="heurefColumn" msprop:Generator_UserColumnName="heuref" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cvehicule" msprop:Generator_ColumnVarNameInTable="columncvehicule" msprop:Generator_ColumnPropNameInRow="cvehicule" msprop:Generator_ColumnPropNameInTable="cvehiculeColumn" msprop:Generator_UserColumnName="cvehicule" type="xs:int" minOccurs="0" />
+              <xs:element name="matriculevehicule" msprop:Generator_ColumnVarNameInTable="columnmatriculevehicule" msprop:Generator_ColumnPropNameInRow="matriculevehicule" msprop:Generator_ColumnPropNameInTable="matriculevehiculeColumn" msprop:Generator_UserColumnName="matriculevehicule" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="VSHV1" msprop:Generator_TableClassName="VSHV1DataTable" msprop:Generator_TableVarName="tableVSHV1" msprop:Generator_TablePropName="VSHV1" msprop:Generator_RowDeletingName="VSHV1RowDeleting" msprop:Generator_RowChangingName="VSHV1RowChanging" msprop:Generator_RowEvHandlerName="VSHV1RowChangeEventHandler" msprop:Generator_RowDeletedName="VSHV1RowDeleted" msprop:Generator_UserTableName="VSHV1" msprop:Generator_RowChangedName="VSHV1RowChanged" msprop:Generator_RowEvArgName="VSHV1RowChangeEvent" msprop:Generator_RowClassName="VSHV1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idpermanence" msprop:Generator_ColumnVarNameInTable="columnidpermanence" msprop:Generator_ColumnPropNameInRow="idpermanence" msprop:Generator_ColumnPropNameInTable="idpermanenceColumn" msprop:Generator_UserColumnName="idpermanence" type="xs:int" />
+              <xs:element name="chefdep_id" msprop:Generator_ColumnVarNameInTable="columnchefdep_id" msprop:Generator_ColumnPropNameInRow="chefdep_id" msprop:Generator_ColumnPropNameInTable="chefdep_idColumn" msprop:Generator_UserColumnName="chefdep_id" type="xs:int" minOccurs="0" />
+              <xs:element name="dateag" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndateag" msprop:Generator_ColumnPropNameInRow="dateag" msprop:Generator_ColumnPropNameInTable="dateagColumn" msprop:Generator_UserColumnName="dateag" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="datefin" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndatefin" msprop:Generator_ColumnPropNameInRow="datefin" msprop:Generator_ColumnPropNameInTable="datefinColumn" msprop:Generator_UserColumnName="datefin" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="semainechar" msprop:Generator_ColumnVarNameInTable="columnsemainechar" msprop:Generator_ColumnPropNameInRow="semainechar" msprop:Generator_ColumnPropNameInTable="semainecharColumn" msprop:Generator_UserColumnName="semainechar" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nomniveau" msprop:Generator_ColumnVarNameInTable="columnnomniveau" msprop:Generator_ColumnPropNameInRow="nomniveau" msprop:Generator_ColumnPropNameInTable="nomniveauColumn" msprop:Generator_UserColumnName="nomniveau" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nomagent" msprop:Generator_ColumnVarNameInTable="columnnomagent" msprop:Generator_ColumnPropNameInRow="nomagent" msprop:Generator_ColumnPropNameInTable="nomagentColumn" msprop:Generator_UserColumnName="nomagent" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="prenomagent" msprop:Generator_ColumnVarNameInTable="columnprenomagent" msprop:Generator_ColumnPropNameInRow="prenomagent" msprop:Generator_ColumnPropNameInTable="prenomagentColumn" msprop:Generator_UserColumnName="prenomagent" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nomf" msprop:Generator_ColumnVarNameInTable="columnnomf" msprop:Generator_ColumnPropNameInRow="nomf" msprop:Generator_ColumnPropNameInTable="nomfColumn" msprop:Generator_UserColumnName="nomf" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="typepermanence" msprop:Generator_ColumnVarNameInTable="columntypepermanence" msprop:Generator_ColumnPropNameInRow="typepermanence" msprop:Generator_ColumnPropNameInTable="typepermanenceColumn" msprop:Generator_UserColumnName="typepermanence" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nomentity" msprop:Generator_ColumnVarNameInTable="columnnomentity" msprop:Generator_ColumnPropNameInRow="nomentity" msprop:Generator_ColumnPropNameInTable="nomentityColumn" msprop:Generator_UserColumnName="nomentity" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idagent" msprop:Generator_ColumnVarNameInTable="columnidagent" msprop:Generator_ColumnPropNameInRow="idagent" msprop:Generator_ColumnPropNameInTable="idagentColumn" msprop:Generator_UserColumnName="idagent" type="xs:int" minOccurs="0" />
+              <xs:element name="affectation" msprop:Generator_ColumnVarNameInTable="columnaffectation" msprop:Generator_ColumnPropNameInRow="affectation" msprop:Generator_ColumnPropNameInTable="affectationColumn" msprop:Generator_UserColumnName="affectation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="reseau" msprop:Generator_ColumnVarNameInTable="columnreseau" msprop:Generator_ColumnPropNameInRow="reseau" msprop:Generator_ColumnPropNameInTable="reseauColumn" msprop:Generator_UserColumnName="reseau" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="heured" msprop:Generator_ColumnVarNameInTable="columnheured" msprop:Generator_ColumnPropNameInRow="heured" msprop:Generator_ColumnPropNameInTable="heuredColumn" msprop:Generator_UserColumnName="heured" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="heuref" msprop:Generator_ColumnVarNameInTable="columnheuref" msprop:Generator_ColumnPropNameInRow="heuref" msprop:Generator_ColumnPropNameInTable="heurefColumn" msprop:Generator_UserColumnName="heuref" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cvehicule" msprop:Generator_ColumnVarNameInTable="columncvehicule" msprop:Generator_ColumnPropNameInRow="cvehicule" msprop:Generator_ColumnPropNameInTable="cvehiculeColumn" msprop:Generator_UserColumnName="cvehicule" type="xs:int" minOccurs="0" />
+              <xs:element name="matriculevehicule" msprop:Generator_ColumnVarNameInTable="columnmatriculevehicule" msprop:Generator_ColumnPropNameInRow="matriculevehicule" msprop:Generator_ColumnPropNameInTable="matriculevehiculeColumn" msprop:Generator_UserColumnName="matriculevehicule" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telagent" msprop:Generator_ColumnVarNameInTable="columntelagent" msprop:Generator_ColumnPropNameInRow="telagent" msprop:Generator_ColumnPropNameInTable="telagentColumn" msprop:Generator_UserColumnName="telagent" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:VSD" />
+      <xs:field xpath="mstns:idpermanence" />
+    </xs:unique>
+    <xs:unique name="VSHV_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:VSHV" />
+      <xs:field xpath="mstns:idpermanence" />
+    </xs:unique>
+    <xs:unique name="VSHV1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:VSHV1" />
+      <xs:field xpath="mstns:idpermanence" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

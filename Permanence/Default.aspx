@@ -1,89 +1,203 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Permanence._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-   
-     <br />
-  
-     
-    
-     
-    
-   
-        
-        <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h4 class="m-0 font-weight-bold text-primary" style="height: 21px">LISTE DES PERSONNES EN PERMANENCE:</h4>
-                                </div>
-                                <div class="card-body">
-                                   <table class="w-100">
-                                        <tr><td></td></tr>
-         <tr>
-             <td style="width: 105px"><asp:Button ID="Button2" runat="server" CssClass="btn btn-primary dropdown-toggle " Text="Recherche" OnClick="Button2_Click" /></td>
-             
-             <td style="width: 715px">&nbsp;</td>
-            
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">RADEEF</a>
 
-                 <td style="width: 49px">
-                     <asp:Label ID="Label2" runat="server" Text="Imprimer"></asp:Label></td>
-                <td><asp:Button ID="Button4" runat="server" CssClass="btn btn-primary dropdown-toggle " style="margin-left:20px" Text="report" /></td>
-                
-            
-         
-       
-     </table>
-                                     
-    <asp:GridView ID="GridView2" style="text-align:center" runat="server"  BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnSelectedIndexChanged="GridView2_SelectedIndexChanged" AllowCustomPaging="True">
-                   <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
-                   <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
-                   <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
-                   <RowStyle ForeColor="#330099" BackColor="White" />
-                   <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
-                   <SortedAscendingCellStyle BackColor="#FEFCEB" />
-                   <SortedAscendingHeaderStyle BackColor="#AF0101" />
-                   <SortedDescendingCellStyle BackColor="#F6F0C0" />
-                   <SortedDescendingHeaderStyle BackColor="#7E0000" />
-               </asp:GridView>                                </div>
-                            </div>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-md-0">
 
-    
-    
+                <li class="nav-item">
+
+                    <asp:LinkButton ID="LinkButton1" runat="server" Font-Bold="True"
+                        Font-Size="9pt" OnClick="permanencestandard"> Permanence Standard
+                    </asp:LinkButton>
+                </li>
+                <li class="nav-item">&nbsp;
+                </li>
+                <li class="nav-item">
+
+                    <asp:LinkButton ID="LinkButton2" runat="server" Font-Bold="True"
+                        Font-Size="9pt" OnClick="redirectpu"> Permanence Urgente
+                    </asp:LinkButton>
+                </li>
+
+                <li class="nav-item">&nbsp;
+                </li>
+
+                <li class="nav-item">
+
+                </li>
+
+            </ul>
+        </div>
+    </nav>
      <br />
    
-     
-     <br />
-     
-     <br />
-        <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h4 class="m-0 font-weight-bold text-primary" style="height: 19px">LISTE DES AGENTS :</h4>
-                                </div>
-                                <div class="card-body">
-                                     <table class="w-100">
-         <tr>
-             <td style="width: 382px">&nbsp;</td>
-             <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary dropdown-toggle " Text="Button" />
-             <td></td>
-             <td>&nbsp;</td>
-         </tr>
-     </table>
-                                   
-    <asp:GridView ID="GridView1"  style="text-align:center"  runat="server"  BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnSelectedIndexChanged="GridView2_SelectedIndexChanged" AllowCustomPaging="True">
-                   <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
-                   <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
-                   <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
-                   <RowStyle ForeColor="#330099" BackColor="White" />
-                   <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
-                   <SortedAscendingCellStyle BackColor="#FEFCEB" />
-                   <SortedAscendingHeaderStyle BackColor="#AF0101" />
-                   <SortedDescendingCellStyle BackColor="#F6F0C0" />
-                   <SortedDescendingHeaderStyle BackColor="#7E0000" />
-               </asp:GridView>                                </div>
-                            </div>
-    
+    <div class="text-primary">
+                                    <h1 class="h3 mb-0 text-gray-800">Dashboard :</h1></div>
+                                            <hr>
+                                    <p></p>
+       <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+
+                    <table class="w-100">
+                        <tr>
+                            <td style="width: 26px"> &nbsp;</td>
+                            <td>
+                                <asp:Label ID="Label9" runat="server" Text="code:"></asp:Label>
+                            </td>
+                            <td style="width: 209px">
+                                <asp:TextBox ID="TextBox9" runat="server" ReadOnly="True"></asp:TextBox>
+                            </td>
+                            <td style="width: 131px">
+                                <asp:Label ID="Label10" runat="server" Text="Prenom Nom :"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="TextBox10" runat="server" ReadOnly="True"></asp:TextBox>
+                            </td>
+                        </tr>
+                    </table>
+
+                    </div>
+                </div>
+           </div>
     <br />
-           <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-           <br />
+    <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+    <table class="w-100">
+        <tr>
+            <td style="width: 150px; height: 32px;">
+                <asp:Label ID="Label2" runat="server" Text="tableau de bord :"></asp:Label>
+            </td>
+            <td style="width: 188px; height: 32px;">
+                &nbsp;</td>
+            <td style="height: 32px"></td>
+        </tr>
+    </table>
+
+
+
+
+
+
+
+
+
+    <br />
+
+
+    <asp:Panel ID="Panel1" runat="server" Height="362px">
+          <div class="card shadow mb-4">
+        <div class="card-header py-3" style="height: 67px">
+        <asp:Label ID="Label7" runat="server" Font-Size="25px" ForeColor="Black" style="height: 30px" Text="Recherche :"></asp:Label>
+            </div>
+        <div class="card-body">
+            <table class="nav-justified">
+                <tr>
+                    <td style="width: 758px">
+                        <asp:Label ID="Label8" runat="server" Text="Label"></asp:Label>
+                        <table class="nav-justified" style="height: 258px; width: 751px">
+                            <tr>
+                                <td style="width: 153px; height: 24px;">
+                                    <asp:CheckBox ID="CheckBox1" runat="server" Text="Id Agent" OnCheckedChanged="CheckBox1_CheckedChanged" />
+                                </td>
+                                <td style="height: 24px; width: 292px;">
+                                    <asp:TextBox ID="TextBox1" runat="server" CssClass="col-md-offset-0"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 153px; height: 27px;">
+                                    <asp:CheckBox ID="CheckBox2" runat="server" Text="fonction" />
+                                </td>
+                                <td style="width: 292px; height: 27px;">
+                                    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                                </td>
+                            </tr>
+                           
+                            <tr>
+                                <td style="height: 24px">
+                                    <asp:CheckBox ID="CheckBox4" runat="server" Text="nom" />
+                                </td>
+                                <td style="width: 292px; height: 24px">
+                                    <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:CheckBox ID="CheckBox5" runat="server" Text="prenom" />
+                                </td>
+                                <td style="width: 292px">
+                                    <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:CheckBox ID="CheckBox7" runat="server" Text="nom entity" />
+                                </td>
+                                <td style="width: 292px">
+                                    <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="height: 27px">
+                                    &nbsp;</td>
+                                <td style="width: 292px; height: 27px">
+                                    &nbsp;
+                                    </td>
+                                <td style="width: 79px; height: 27px">
+                                    &nbsp;</td>
+                                <td style="height: 27px">
+                                    &nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 153px">
+                                    <asp:Button ID="Button1"   CssClass="btn btn-success "  runat="server"  OnClick="Button1_Click2" Text="Filtre" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        </div>
         
-         
+    </asp:Panel>
+
+     <br />
+     
+    
+     
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h4 class="m-0 font-weight-bold text-primary" style="height: 42px">LISTE DES AGENTS ::</h4>
+        </div>
+        <div class="card-body">
+          <p></p>
+
+            <asp:GridView ID="GridView1" Style="text-align: center" runat="server" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnSelectedIndexChanged="GridView2_SelectedIndexChanged" AllowCustomPaging="True" CssClass="table-active table-bordered table-hover table-responsive">
+                <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+                <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+                <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+                <RowStyle ForeColor="#330099" BackColor="White" />
+                <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+                <SortedAscendingCellStyle BackColor="#FEFCEB" />
+                <SortedAscendingHeaderStyle BackColor="#AF0101" />
+                <SortedDescendingCellStyle BackColor="#F6F0C0" />
+                <SortedDescendingHeaderStyle BackColor="#7E0000" />
+            </asp:GridView>
+        </div>
+    </div>
+
+    <br />
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    <br />
+
+
 
 </asp:Content>

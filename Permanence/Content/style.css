@@ -1,10 +1,28 @@
 ﻿body {
-    margin :0;
-    padding :0;
-    background-image : url("../Content/slide3.jpeg");
-    background-size:cover;
-    font-family:sans-serif;
     
+    background-image : url("../Content/slide3.jpeg");
+   
+    font-family:sans-serif;
+
+/* This ensures your background image is center-positioned vertically and horizontally */
+
+    background-position: center center;
+
+/* This ensures your background image doesn’t tile */
+
+background-repeat: no-repeat;
+
+/*This fixes your background image within the viewport and ensures it doesn’t move when image is smaller than the content’s height */
+
+background-attachment: fixed;
+
+/* This makes your background image responsive and rescale according to the viewport or container size */
+
+background-size: cover;
+
+/* Choose your background color that appears while the image is still uploading */
+
+background-color: #D3D3D3;
 }
 
 .loginbox{
@@ -33,7 +51,7 @@ h2{
     margin:0;
     text-align:center;
     color:rgb(255,217,9);
-    margin-top:
+    /*margin-top:0;*/
 
 }
 .lblemail, .lblpass {
@@ -64,12 +82,20 @@ outline:none;
 height:40px;
 font-size:16px;
 color:#fff;
-background-color:#756cef;
+background-color:#ff0000;
 cursor:pointer;
 border-radius:20px;
 transition:.3s ease-in-out;
 }
+
+
 .btnsubmit:hover{
-    background-color:#f82d2d;
+    background-color:#18ac32;
     
 }
+
+
+
+
+
+

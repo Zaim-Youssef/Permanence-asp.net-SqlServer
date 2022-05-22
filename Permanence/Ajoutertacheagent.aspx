@@ -117,14 +117,11 @@
                </tr>
                <tr>
                    <td style="width: 274px">
-                        <asp:Label ID="Label11"   runat="server" Text="Jour :  " Font-Bold="True" Font-Size="15px" ForeColor="Black"></asp:Label>
-                       
-
-                   </td>
+                        &nbsp;</td>
                    <td style="width: 244px">
                        </tr>
                <tr><td style="width: 274px">
-                   <asp:DropDownList ID="DropDownList4" CssClass="btn btn-primary dropdown-toggle " Font-Size="Medium" runat="server" AutoPostBack="True" Width="261px" ></asp:DropDownList></td>
+                   &nbsp;</td>
                </tr>
                 <tr>
                    <td style="width: 274px">
@@ -132,7 +129,7 @@
                    </td>
                    </tr>
                <tr><td style="width: 274px">
-                     <asp:DropDownList ID="DropDownList1" type="button" CssClass="btn btn-primary dropdown-toggle " Font-Size="Medium" runat="server" AutoPostBack="True" Width="261px">
+                     <asp:DropDownList ID="DropDownList1" type="button" CssClass="btn btn-primary dropdown-toggle " Font-Size="Medium" runat="server" AutoPostBack="True" Width="261px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged1">
                        </asp:DropDownList>
                    </td>
                    </tr>
@@ -142,8 +139,10 @@
                        <asp:Label ID="Label13"   runat="server" Text="Nom tache :  " Font-Bold="True" Font-Size="15px" ForeColor="Black"></asp:Label>
                        
                    <tr>
-                       <td style="width: 274px"><asp:DropDownList ID="DropDownList2" type="button" CssClass="btn btn-primary dropdown-toggle " Font-Size="Medium" runat="server" AutoPostBack="True" Width="261px" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged1" >
-                       </asp:DropDownList></td>
+                       <td style="width: 274px">
+                           <asp:TextBox ID="TextBox16"  class="form-control form-control-user" Font-Size="Medium" runat="server" Width="255px"></asp:TextBox>
+                           
+                       </td>
                    </tr>
                <tr>
                    <td style="width: 274px">
@@ -208,9 +207,12 @@
             <p>
                 <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
            </p>
+              <asp:Label ID="Label16" runat="server" Text="Label"></asp:Label>
+              <asp:Label ID="Label17" runat="server" Text="Label"></asp:Label>
            <br />
            <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
               <br />
+              <asp:Label ID="Label18" runat="server" Text="Label"></asp:Label>
            <br />
               <asp:Label ID="Label6" runat="server" Text=""></asp:Label>
               <br />

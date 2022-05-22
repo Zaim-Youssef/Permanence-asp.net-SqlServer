@@ -74,14 +74,23 @@ namespace Permanence
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
+      
 
+        protected void Button1_Click2(object sender, EventArgs e)
+        {
         }
 
-        protected void Button1_Click1(object sender, EventArgs e)
+        protected void Button2_Click(object sender, EventArgs e)
         {
+            Global.globalvadmin = "";
+            Global.globalvagent = "";
             Response.Redirect("connexionpage.aspx");
+            
+        }
+        public void hyperlink(object sender  ,EventArgs e)
+        {
+            Global.globalvadmin= "";
+            Global.globalvagent = "";
         }
     }
 
