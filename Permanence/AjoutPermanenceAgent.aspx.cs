@@ -8,8 +8,10 @@ namespace Permanence
         public static int idurg;
         public static int idperma ;
         public static string mpa1;
+        public static int midag;
         protected void Page_Load(object sender, EventArgs e)
         {
+            TextBox6.Text = "02/01/ 22";
 
             //if (this.PreviousPage == null)
             //{
@@ -17,12 +19,12 @@ namespace Permanence
             //}
             //else
             //{
-          
+
             try
                 {
 
                     string cn = @"Data Source=DESKTOP-IFPTOAR\SQLEXPRESS;Initial Catalog=Permanence;Integrated Security=True";
-                    string queryv = @"select max(idagendaurg) from agendaurgent";
+                    string queryv = @"select count(idagenda) from agenda";
                     SqlConnection cnxv = new SqlConnection(cn);
                     SqlCommand cmd = new SqlCommand(queryv, cnxv);
                     SqlDataReader rdv;
@@ -34,8 +36,9 @@ namespace Permanence
                     {
 
                         Label8.Text = rdv.GetInt32(0).ToString();
-                        idurg = (rdv.GetInt32(0) + 1);
-                        lb2.Text = idurg.ToString();
+                        idurg = (rdv.GetInt32(0)+1 );
+                    Label8.Text = idurg.ToString();
+                       
                     }
                     cnxv.Close();
                     rdv.Close();
@@ -143,15 +146,17 @@ namespace Permanence
                             TextBox2.Text = rdmpa.GetString(0).ToString();
                             TextBox1.Text = rdmpa.GetInt32(2).ToString();
                             TextBox4.Text = rdmpa.GetInt32(4).ToString();
+                            midag = rdmpa.GetInt32(5);
 
 
-                        }
+
+                    }
                         cn2.Close();
                         rdmpa.Close();
                     }
                     catch (Exception ex)
                     {
-                        Label8.Text = "REMPLISSAGE text box 3 condition id permanence dans la modification //" + ex.Message;
+                        Label8.Text =  ex.Message;
                     }
 
 
@@ -193,9 +198,9 @@ namespace Permanence
                     }
                     catch (Exception ex)
                     {
-                        Label8.Text = "REMPLISSAGE text box 3 dans la gent condition matricule " + ex.Message;
+                        Label8.Text = ex.Message;
                     }
-                    Label8.Text = "REMPLISSAGE text box 3 non effectuer de mod";
+                    Label8.Text = "";
                 }
 
 
@@ -267,12 +272,13 @@ namespace Permanence
                             Global.cnx.Close();
                         }
                         Global.cnx.Open();
-                        Global.cmd.CommandText = @"select idagenda ,dateag from agenda";
+                        Global.cmd.CommandText = @"select idagenda , FORMAT(dbo.agenda.dateag, 'dd/MM/yy') AS dateag  from agenda where semainechar!='1' and  semainechar!='3' and semainechar!='2' ";
                         DataTable dtad = new DataTable();
                         dtad.Load(Global.cmd.ExecuteReader());
                         DropDownList4.DataSource = dtad;
                         DropDownList4.DataTextField = "dateag";
                         DropDownList4.DataValueField = "idagenda";
+                    
                         DropDownList4.DataBind();
                         Global.cnx.Close();
 
@@ -281,7 +287,7 @@ namespace Permanence
                     catch (Exception ex)
                     {
                         Label8.Text = ex.Message;
-                        Label8.Text = " dropdownlist agenda" + ex.Message;
+                        Label8.Text =  ex.Message;
                     }
 
                     try
@@ -291,21 +297,22 @@ namespace Permanence
                             Global.cnx.Close();
                         }
                         Global.cnx.Open();
-                        Global.cmd.CommandText = @"select idagenda ,semainechar from agenda";
+                        Global.cmd.CommandText = @"select idagenda ,semainechar from agenda where semainechar!='1' and semainechar!='3' and semainechar!='2'";
                         DataTable dta = new DataTable();
                         dta.Load(Global.cmd.ExecuteReader());
+                   
                         DropDownList1.DataSource = dta;
                         DropDownList1.DataTextField = "semainechar";
                         DropDownList1.DataValueField = "idagenda";
                         DropDownList1.DataBind();
                         Global.cnx.Close();
+                    
 
-
-                    }
+                }
                     catch (Exception ex)
                     {
                         Label8.Text = ex.Message;
-                        Label8.Text = " dropdownlist agenda" + ex.Message;
+                        
                     }
 
 
@@ -342,7 +349,9 @@ namespace Permanence
                     }
 
 
-                    catch (Exception ex) { Label8.Text = " dropdownlist Entity" + ex.Message; }
+                    catch (Exception ex) {
+
+                }
 
 
                 }
@@ -414,7 +423,7 @@ namespace Permanence
                     }
                     catch (Exception ex)
                     {
-                        Label8.Text = ex.Message + "insertion 2  div agent nonb effectuer ";
+                        Label8.Text = ex.Message ;
                     }
 
 
@@ -422,8 +431,10 @@ namespace Permanence
 
                 else if ((DropDownList5.SelectedValue == "2") || (DropDownList5.SelectedValue == "3"))
                 {
-                    Label8.Text = idurg.ToString();
-                    Global.cmd.CommandText = "insert into agendaurgent(idagendaurg,datedebut,datefin) values('" + idurg + "','" + DateTime.Parse(TextBox7.Text) + "','" + DateTime.Parse(TextBox8.Text) + "')";
+                    
+
+                    
+                    Global.cmd.CommandText = "insert into agenda (idagenda,dateag,datefin,semainechar) values('" + idurg + "','" + DateTime.Parse(TextBox7.Text) + "','" + DateTime.Parse(TextBox8.Text) + "','" + DropDownList5.SelectedValue.ToString() + "')";
                     if (Global.cmd.ExecuteNonQuery() > 0)
                     {
                         Label8.Text = "insertion  agenda uregent effectuer 2";
@@ -432,8 +443,8 @@ namespace Permanence
                     {
                         Label8.Text = "insertion  agenda uregent non effectuer 2";
                     }
-
-                    Global.cmd.CommandText = " insert into permanence(idpermanence,idagent,idagendaurgence,codeniveau,typepermanence,affectation,reseau,heured,heuref,cvehicule,matriculevehicule )values('" + idperma + "','" + int.Parse(TextBox1.Text) + "','" + idurg + "','" + DropDownList5.SelectedValue.ToString() + "','" + DropDownList6.SelectedItem.ToString() + "','"+DropDownList3.SelectedValue.ToString()+ "','" + DropDownList9.SelectedValue + "','" + DropDownList7.SelectedValue + "','" + DropDownList8.SelectedValue + "','" + int.Parse(TextBox9.Text) + "','"+TextBox5.Text+ "')";
+                    
+                    Global.cmd.CommandText = " insert into permanence(idpermanence,idagent,idag,codeniveau,typepermanence,affectation,reseau,heured,heuref,cvehicule,matriculevehicule )values('" + idperma + "','" + int.Parse(TextBox1.Text) + "','" + idurg + "','" + DropDownList5.SelectedValue.ToString() + "','" + DropDownList6.SelectedItem.ToString() + "','"+DropDownList3.SelectedValue.ToString()+ "','" + DropDownList9.SelectedValue.ToString() + "','" + DropDownList7.SelectedValue.ToString() + "','" + DropDownList8.SelectedValue.ToString() + "','" + int.Parse(TextBox9.Text) + "','"+TextBox5.Text+ "')";
                     if (Global.cmd.ExecuteNonQuery() > 0)
                     {
                         Label8.Text = "insertion effectuer 1";
@@ -471,7 +482,7 @@ namespace Permanence
             if (DropDownList5.SelectedValue == "1")
             {
                 string chaineup = @"Data Source=.\sqlexpress;Initial Catalog=Permanence;Integrated Security=True";
-                string queryup = "Update permanence set matriculevehicule='"+TextBox5.Text+"', cvehicule= '" + int.Parse(TextBox9.Text) + "', heuref ='" + DropDownList8.SelectedValue + "',heured='" + DropDownList7.SelectedValue + "',reseau = '" + DropDownList9.SelectedValue + "',codeniveau='" + (DropDownList5.SelectedValue.ToString()) + "',idagendaurgence=NULL,idag='" + int.Parse(DropDownList1.SelectedValue) + "',typepermanence ='"+DropDownList6.SelectedValue.ToString()+"' ,affectation='"+DropDownList3.SelectedValue.ToString()+"' where idpermanence='" + int.Parse(TextBox4.Text) + "'";
+                string queryup = "Update permanence set matriculevehicule='"+TextBox5.Text+"', cvehicule= '" + int.Parse(TextBox9.Text) + "', heuref ='" + DropDownList8.SelectedValue + "',heured='" + DropDownList7.SelectedValue + "',reseau = '" + DropDownList9.SelectedValue + "',codeniveau='" + (DropDownList5.SelectedValue.ToString()) + "',idag='" + int.Parse(DropDownList1.SelectedValue) + "',typepermanence ='"+DropDownList6.SelectedValue.ToString()+"' ,affectation='"+DropDownList3.SelectedValue.ToString()+"' where idpermanence='" + int.Parse(TextBox4.Text) + "'";
                 SqlConnection cnu = new SqlConnection(chaineup);
                 SqlCommand cmdu = new SqlCommand(queryup, cnu);
                 if (cnu.State == System.Data.ConnectionState.Open)
@@ -515,7 +526,7 @@ namespace Permanence
             {
                 try
                 {
-                    Global.cmd.CommandText = "insert into agendaurgent(idagendaurg,datedebut,datefin) values('" + int.Parse(lb2.Text) + "','" + DateTime.Parse(TextBox7.Text) + "','" + DateTime.Parse(TextBox8.Text) + "')";
+                    Global.cmd.CommandText = "update agenda set (datedebut='" + DateTime.Parse(TextBox7.Text) + "',datefin='" + DateTime.Parse(TextBox8.Text) + "') ,semainechar='"+DropDownList5.SelectedValue.ToString()+"' where idagenda= '" + midag + "' ";
                     if (Global.cnx.State == System.Data.ConnectionState.Open)
                     {
                         Global.cnx.Close();
@@ -541,7 +552,7 @@ namespace Permanence
                 try
                 {
                     string chaines = @"Data Source=DESKTOP-IFPTOAR\SQLEXPRESS;Initial Catalog=Permanence;Integrated Security=True";
-                    string qn = "update permanence  set matriculevehicule='"+TextBox5.Text+ "', cvehicule= '" +int.Parse(TextBox9.Text)+ "',heuref='" + DropDownList8.SelectedValue + "',heured='" + DropDownList7.SelectedValue + "',reseau = '" +DropDownList9.SelectedValue + "',codeniveau='" + DropDownList5.SelectedValue.ToString()+ "' ,validation=NULL,idag=NULL, idagendaurgence='" + int.Parse(lb2.Text) + "',typepermanence ='" + DropDownList6.SelectedItem.ToString() + "',affectation='"+DropDownList3.SelectedValue.ToString()+"' where idpermanence= '" + int.Parse(mpa1) + "'";
+                    string qn = "update permanence  set matriculevehicule='"+TextBox5.Text+ "', cvehicule= '" +int.Parse(TextBox9.Text)+ "',heuref='" + DropDownList8.SelectedValue + "',heured='" + DropDownList7.SelectedValue + "',reseau = '" +DropDownList9.SelectedValue + "',codeniveau='" + DropDownList5.SelectedValue.ToString()+ "' ,validation=NULL,typepermanence ='" + DropDownList6.SelectedItem.ToString() + "',affectation='"+DropDownList3.SelectedValue.ToString()+"'  where idpermanence= '" + int.Parse(mpa1) + "'";
                     SqlConnection cnxs = new SqlConnection(chaines);
                     SqlCommand cmds = new SqlCommand(qn, cnxs);
                     cnxs.Open();
@@ -582,13 +593,13 @@ namespace Permanence
                     Global.cnx.Close();
                 }
                 Global.cnx.Open();
-                Global.cmd.CommandText = @"select datefin ,idagenda from agenda where idagenda = '" + DropDownList4.SelectedValue.ToString() + "'";
+                Global.cmd.CommandText = @"select FORMAT(dbo.agenda.datefin, 'dd/MM/yy') AS datefin  ,idagenda from agenda where idagenda = '" + DropDownList4.SelectedValue.ToString() + "'";
                 Global.rd = (Global.cmd.ExecuteReader());
                 if (Global.rd.Read())
                 {
                     TextBox6.Visible = true;
                     Label3.Visible = true;
-                    TextBox6.Text = Global.rd.GetDateTime(0).ToString();
+                    TextBox6.Text = Global.rd.GetString(0);
                     DropDownList1.SelectedValue = Global.rd.GetInt32(1).ToString();
 
                 }
@@ -610,13 +621,13 @@ namespace Permanence
                     Global.cnx.Close();
                 }
                 Global.cnx.Open();
-                Global.cmd.CommandText = @"select datefin , idagenda from agenda where idagenda = '" + DropDownList1.SelectedValue.ToString() + "'";
+                Global.cmd.CommandText = @"select FORMAT(dbo.agenda.datefin, 'dd/MM/yy') AS datefin , idagenda from agenda where idagenda = '" + DropDownList1.SelectedValue.ToString() + "'";
                 Global.rd = (Global.cmd.ExecuteReader());
                 if (Global.rd.Read())
                 {
                     TextBox6.Visible = true;
                     Label3.Visible = true;
-                    TextBox6.Text = Global.rd.GetDateTime(0).ToString();
+                    TextBox6.Text = Global.rd.GetString(0);
                     DropDownList4.SelectedValue = Global.rd.GetInt32(1).ToString();
                 }
 

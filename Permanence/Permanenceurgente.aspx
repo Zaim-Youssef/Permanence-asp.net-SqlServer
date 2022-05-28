@@ -12,36 +12,23 @@
 
                 <li class="nav-item">
 
-                    <asp:LinkButton ID="LinkButton1" runat="server" OnClick="ag">AGENT1</asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton1" runat="server" OnClick="ag" ForeColor="Black"> Listes des Agents</asp:LinkButton>
                 </li>
                 <li class="nav-item">&nbsp;
                 </li>
                 <li class="nav-item">
 
-                    <asp:LinkButton ID="LinkButton3" runat="server" OnClick="pst1">Permanence Standard1</asp:LinkButton>
+                    <asp:LinkButton ID="LinkButton3" runat="server" OnClick="pst1" ForeColor="Black">Permanence Standard</asp:LinkButton>
                 </li>
             </ul>
         </div>
     </nav>
-      <br />
-
-     <br />
-     <table class="w-100">
-        <tr>
-            <td style="width: 150px; height: 32px;">
-                <asp:Label ID="Label3" runat="server" Text="tableau de bord :"></asp:Label>
-            </td>
-            <td style="width: 188px; height: 32px;">
-                &nbsp;</td>
-            <td style="height: 32px"></td>
-        </tr>
-    </table>
-     <br />
+    
      <div class="card-body">         
          <table class="nav-justified">
              <tr>
                  <td style="width: 806px">
-                     <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+                     <asp:Label ID="Label4" runat="server" Text=""></asp:Label>
                      <table class="nav-justified">
                          <tr>
                              <td style="width: 153px; height: 24px;">
@@ -95,16 +82,21 @@
                              <td style="width: 153px">
                      <asp:Button ID="Button1" runat="server" CssClass="btn btn-success "  OnClick="Button1_Click2" Text="FILTRER" />
                              </td>
+                             <td>
+                                 <asp:Button ID="Button2" runat="server"  CssClass="btn btn-success " Text="IMPRIMER" OnClick="Button2_Click1" />
+                             </td>
                              
                          </tr>
                      </table>
                     </table>
          </div>
+    <p></p>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h4 class="m-0 font-weight-bold text-primary" style="height: 58px">LISTE DES PERSONNES EN PERMANENCE URGENT:</h4>
+            <p class="m-0 font-weight-bold text-primary" style="height: 58px">
+            <asp:Label ID="Label12" runat="server" Font-Size="25px" ForeColor="Black" style="height: 30px" Text="LISTE DES PERSONNES EN PERMANENCE NIVEAU 2 , 3 :"></asp:Label>
+            </p>
         </div>
-        <p></p><p></p>
         <div class="card-body">
            <div class="container">
                  <asp:GridView ID="GridView1" runat="server"  AllowSorting="True" Style="text-align: center"  CssClass="table  table-bordered table-hover table-responsive" CellPadding="4" Font-Names="Arial" Font-Size="8pt" AllowPaging="True" OnPageIndexChanging="GridView1_PageIndexChanging1" OnSorting="GridView1_Sorting" PagerSettings-Mode="NumericFirstLast" ForeColor="#333333" GridLines="None">

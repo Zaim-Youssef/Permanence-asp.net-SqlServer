@@ -12,16 +12,16 @@
 
                 <li class="nav-item">
 
-                    <asp:LinkButton ID="LinkButton1" runat="server" Font-Bold="True"
-                        Font-Size="9pt" OnClick="permanencestandard"> Permanence Standard
+                    <asp:LinkButton ID="LinkButton1" runat="server" 
+                        OnClick="permanencestandard" ForeColor="Black"> Permanence Standard
                     </asp:LinkButton>
                 </li>
                 <li class="nav-item">&nbsp;
                 </li>
                 <li class="nav-item">
 
-                    <asp:LinkButton ID="LinkButton2" runat="server" Font-Bold="True"
-                        Font-Size="9pt" OnClick="redirectpu"> Permanence Urgente
+                    <asp:LinkButton ID="LinkButton2" runat="server" 
+                       OnClick="redirectpu" ForeColor="Black"> Permanence Urgente
                     </asp:LinkButton>
                 </li>
 
@@ -35,12 +35,9 @@
             </ul>
         </div>
     </nav>
-     <br />
+    
    
-    <div class="text-primary">
-                                    <h1 class="h3 mb-0 text-gray-800">Dashboard :</h1></div>
-                                            <hr>
-                                    <p></p>
+                                           
        <div class="card o-hidden border-0 shadow-lg my-5">
             <div class="card-body p-0">
 
@@ -69,51 +66,25 @@
                 </div>
            </div>
     <br />
-    <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
-    <table class="w-100">
-        <tr>
-            <td style="width: 150px; height: 32px;">
-                <asp:Label ID="Label2" runat="server" Text="tableau de bord :"></asp:Label>
-            </td>
-            <td style="width: 188px; height: 32px;">
-                &nbsp;</td>
-            <td style="height: 32px"></td>
-        </tr>
-    </table>
-
-
-
-
-
-
-
-
-
-    <br />
-
 
     <asp:Panel ID="Panel1" runat="server" Height="362px">
           <div class="card shadow mb-4">
-        <div class="card-header py-3" style="height: 67px">
-        <asp:Label ID="Label7" runat="server" Font-Size="25px" ForeColor="Black" style="height: 30px" Text="Recherche :"></asp:Label>
-            </div>
         <div class="card-body">
             <table class="nav-justified">
                 <tr>
                     <td style="width: 758px">
-                        <asp:Label ID="Label8" runat="server" Text="Label"></asp:Label>
                         <table class="nav-justified" style="height: 258px; width: 751px">
                             <tr>
-                                <td style="width: 153px; height: 24px;">
-                                    <asp:CheckBox ID="CheckBox1" runat="server" Text="Id Agent" OnCheckedChanged="CheckBox1_CheckedChanged" />
+                                <td style="width: 107px; height: 24px;">
+                                    <asp:CheckBox ID="CheckBox1" runat="server" Text="_Id Agent" OnCheckedChanged="CheckBox1_CheckedChanged" />
                                 </td>
                                 <td style="height: 24px; width: 292px;">
                                     <asp:TextBox ID="TextBox1" runat="server" CssClass="col-md-offset-0"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 153px; height: 27px;">
-                                    <asp:CheckBox ID="CheckBox2" runat="server" Text="fonction" />
+                                <td style="width: 107px; height: 27px;">
+                                    <asp:CheckBox ID="CheckBox2" runat="server" Text="_fonction" />
                                 </td>
                                 <td style="width: 292px; height: 27px;">
                                     <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
@@ -121,44 +92,36 @@
                             </tr>
                            
                             <tr>
-                                <td style="height: 24px">
-                                    <asp:CheckBox ID="CheckBox4" runat="server" Text="nom" />
+                                <td style="height: 24px; width: 107px;">
+                                    <asp:CheckBox ID="CheckBox4" runat="server" Text="_nom" />
                                 </td>
                                 <td style="width: 292px; height: 24px">
                                     <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <asp:CheckBox ID="CheckBox5" runat="server" Text="prenom" />
+                                <td style="width: 107px">
+                                    <asp:CheckBox ID="CheckBox5" runat="server" Text="_prenom" />
                                 </td>
                                 <td style="width: 292px">
                                     <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <asp:CheckBox ID="CheckBox7" runat="server" Text="nom entity" />
+                                <td style="width: 107px">
+                                    <asp:CheckBox ID="CheckBox7" runat="server" Text="_nom entity" />
                                 </td>
                                 <td style="width: 292px">
                                     <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
                                 </td>
                             </tr>
+                          
                             <tr>
-                                <td style="height: 27px">
-                                    &nbsp;</td>
-                                <td style="width: 292px; height: 27px">
-                                    &nbsp;
+                                <td style="width: 107px">
+                                    <asp:Button ID="Button1"   CssClass="btn btn-success "  runat="server"  OnClick="Button1_Click2" Text="Filtrer" />
                                     </td>
-                                <td style="width: 79px; height: 27px">
+                                <td>
                                     &nbsp;</td>
-                                <td style="height: 27px">
-                                    &nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td style="width: 153px">
-                                    <asp:Button ID="Button1"   CssClass="btn btn-success "  runat="server"  OnClick="Button1_Click2" Text="Filtre" />
-                                </td>
                             </tr>
                         </table>
                     </td>
@@ -167,18 +130,35 @@
         </div>
         </div>
         
+          <div class="card-header py-3" style="height: 86px">
+              <br />
+              <asp:Label ID="Label12" runat="server" Font-Size="25px" ForeColor="Black" style="height: 30px" Text="LISTE DES AGENTS :"></asp:Label>
+              <br />
+          </div>
+        
     </asp:Panel>
+   
+
+     <br />
 
      <br />
      
     
      
     <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h4 class="m-0 font-weight-bold text-primary" style="height: 42px">LISTE DES AGENTS ::</h4>
-        </div>
         <div class="card-body">
-          <p></p>
+              <table class="w-100">
+         <tr>
+             <td style="width: 160px">
+                 <asp:Label ID="Label13" runat="server" ForeColor="Black" Text="Ajouter un Agent :"></asp:Label>
+             </td>
+             <td>
+                                    <asp:Button ID="Button2" CssClass="btn btn-success " runat="server" Text="AJOUTER" OnClick="Button2_Click1" />
+                                </td>
+         </tr>
+    
+    </table>
+            <p></p>
 
             <asp:GridView ID="GridView1" Style="text-align: center" runat="server" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnSelectedIndexChanged="GridView2_SelectedIndexChanged" AllowCustomPaging="True" CssClass="table-active table-bordered table-hover table-responsive">
                 <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
@@ -195,7 +175,7 @@
     </div>
 
     <br />
-    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="Label1" runat="server"></asp:Label>
     <br />
 
 

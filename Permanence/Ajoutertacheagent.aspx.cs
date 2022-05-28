@@ -131,9 +131,9 @@ namespace Permanence
                         }
                         catch (Exception ex)
                         {
-                            Label1.Text = "REMPLISSAGE text box 3 tajout" + ex.Message;
+                            Label1.Text =  ex.Message;
                         }
-                        Label1.Text = "REMPLISSAGE text box 3  effectuer de ajout";
+                        Label1.Text = "";
 
 
                     }
@@ -161,6 +161,7 @@ namespace Permanence
                 if (Global.cmd.ExecuteNonQuery() > 0)
                 {
                     Label5.Text = "insertion executer";
+                    Response.Redirect("atpa.aspx");
                 }
 
                 else
@@ -206,6 +207,7 @@ namespace Permanence
                 if (Global.cmd.ExecuteNonQuery() > 0)
                 {
                     Label2.Text = "mod executer";
+                    Response.Redirect("atpa.aspx");
                 }
 
                 else
@@ -217,7 +219,7 @@ namespace Permanence
 
             catch (Exception ex)
             {
-                Label2.Text = "mod1" + ex.Message;
+                Label2.Text = "" + ex.Message;
           
 
             }

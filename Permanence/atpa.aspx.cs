@@ -23,13 +23,13 @@ namespace Permanence
 
 
 
-                    Label1.Text = cm1.ToString();
+                  
                     if (cm1 != null)
 
                     {
                         string cnha = @"Data Source=DESKTOP-IFPTOAR\SQLEXPRESS;Initial Catalog=Permanence;Integrated Security=True";
                         SqlConnection cnxha = new SqlConnection(cnha);
-                        string query1 = "select p.idpermanence as 'PERMANENCE' , a.semainechar as 'SEMAINE' ,a.dateag as 'DATE DEBUT',a.datefin  as 'DATE FIN',e.nomentity as 'ENTITY',p.validation  as 'VALIDATION', '' as 'AJOUTER TACHE' from permanence p, agent g, agenda a , entity e  where   p.idagent = g.matricule  and p.idag = a.idagenda and e.ident=g.Ide and p.idagent = '" + int.Parse(cm1) + "'";
+                        string query1 = "select * , '' as [TACHE] from agentlisteagenda where idagent = '" + int.Parse(cm1) + "'";
 
 
 
@@ -48,10 +48,10 @@ namespace Permanence
 
                         for (n = 0; n < GridView1.Rows.Count; n++)
                         {
-                            if (GridView1.Rows[n].Cells[5].Text != "valider")
+                            if (GridView1.Rows[n].Cells[18].Text != "valider")
                             {
 
-                                GridView1.Rows[n].Cells[6].Text = @"<a href= 'Ajoutertacheagent?ajt=" + GridView1.Rows[n].Cells[0].Text + "'  > nouvelle tache </ a >";
+                                GridView1.Rows[n].Cells[19].Text = @"<a href= 'Ajoutertacheagent?ajt=" + GridView1.Rows[n].Cells[0].Text + "'  > nouvelle tache </ a >";
 
                                 s = GridView1.Rows[n].Cells[0].Text;
 

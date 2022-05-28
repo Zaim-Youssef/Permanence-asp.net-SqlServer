@@ -5,43 +5,49 @@
     <table class="w-100">
         <tr>
             <td style="width: 164px">IMPRIMER</td>
-            <td>&nbsp;</td>
+            <td style="width: 195px">&nbsp;</td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td style="width: 164px; height: 29px;">
                 <asp:CheckBox ID="CheckBox1" runat="server" Text="Type Permanence :" />
             </td>
-            <td style="height: 29px">
+            <td style="height: 29px; width: 195px;">
                 <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
             </td>
             <td style="height: 29px"></td>
         </tr>
         <tr>
-            <td style="width: 164px">
+            <td style="width: 164px; height: 30px;">
                 <asp:CheckBox ID="CheckBox2" runat="server" Text="Division :" />
             </td>
-            <td>
+            <td style="width: 195px; height: 30px">
                 <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
             </td>
-            <td>&nbsp;</td>
+            <td style="height: 30px"></td>
         </tr>
         <tr>
-            <td>
+            <td style="height: 46px">
                  
-             </td><td>
+                <asp:CheckBox ID="CheckBox3" Text ="Date" runat="server" />
                  
              </td>
+            
+            <td style="height: 46px; width: 195px;">
+            <asp:TextBox ID="TextBox3" runat="server" TextMode="Date"></asp:TextBox></td>
+           
         </tr>
+
          <tr>
              
             <td style="width: 164px">
                 <asp:Button ID="Button4" CssClass="btn btn-success" runat="server" Text="envoyer" OnClick="Button4_Click" Width="98px" />
              </td>
-            <td>
-                <asp:Button ID="Button3" CssClass="btn btn-success" runat="server" OnClick="Button3_Click" Text="Imprimer" />
+            <td style="width: 195px">
+                <asp:Button ID="Button3" CssClass="btn btn-success" runat="server" OnClick="Button3_Click" Text="Filtrer" />
              </td>
-            <td>&nbsp;</td>
+            <td><asp:Button ID="Button1" CssClass="btn btn-danger " Width="98px" Text="Retour" runat="server" OnClick="Button1_Click"  /></td>
+             
         </tr>
     </table>
    <%-- <div>
@@ -54,6 +60,6 @@
     <div>
        <%-- <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>--%>
- <rsweb:ReportViewer ID="ReportViewer1" runat="server" Height="732px" Width="1247px"></rsweb:ReportViewer>
+ <rsweb:ReportViewer ID="ReportViewer1" runat="server" Height="643px" Width="1658px"></rsweb:ReportViewer>
     </div>
 </asp:Content>

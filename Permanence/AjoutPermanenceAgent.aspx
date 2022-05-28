@@ -13,10 +13,10 @@
                   
                                 <div class="card-header py-3">
                                      <p>
-                                         <asp:Label ID="lb2" runat="server" Text="lbl2"></asp:Label>
+                                         &nbsp;</p>
+                                    <p>
+            <asp:Label ID="Label24" runat="server" Font-Size="25px" ForeColor="Black" style="height: 30px" Text="Ajouter Un Agenda de Permanence a un Agent :"></asp:Label>
                                      </p>
-                                    <h2 class="m-0 font-weight-bold text-primary" >Ajouter Une Permanence a un Agent :</h2>
-                                    <p></p>
                                 </div>
                       
 
@@ -107,7 +107,7 @@
                                         <tr>
                                             <td>
                                                 <asp:Label ID="Label2" CssClass="btn btn-success" runat="server" Text="Du :" style="left: 0px; top: 1px; width: 180px"></asp:Label></td>
-                                            <td><asp:Label ID="Label9" CssClass="btn btn-success" width="180px" runat="server" Text="Jusqu'a :"></asp:Label></td>
+                                            <td><asp:Label ID="Label9" CssClass="btn btn-success" width="175px" runat="server" Text="Jusqu'a :"></asp:Label></td>
 
                                         </tr>
                                         <tr>
@@ -145,7 +145,7 @@
                <tr>
                    <td style="height: 34px" >
                    <asp:TextBox ID="TextBox7" runat="server" TextMode="Date"></asp:TextBox>
-                   <asp:DropDownList ID="DropDownList4" type="button" CssClass="btn btn-primary dropdown-toggle  " Font-Size="Medium" runat="server" AutoPostBack="True" Width="241px" OnSelectedIndexChanged="DropDownList4_SelectedIndexChanged">
+                   <asp:DropDownList ID="DropDownList4" type="button" CssClass="btn btn-primary dropdown-toggle  " Font-Size="Medium"  Width="241px" runat="server" AutoPostBack="True"  OnSelectedIndexChanged="DropDownList4_SelectedIndexChanged">
                        </asp:DropDownList>
 
                    </td>
@@ -219,7 +219,7 @@
                   
                </tr>
                
-           </table>                                </div>
+           </table>                                     </div>
                             </div>
   
                   

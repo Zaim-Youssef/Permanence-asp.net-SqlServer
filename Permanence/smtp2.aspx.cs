@@ -21,7 +21,7 @@ namespace Permanence
             try
             {
                 MailMessage ms = new MailMessage();
-                ms.From = new MailAddress(TextBox4.Text, "Learn with Developer");
+                ms.From = new MailAddress(TextBox4.Text, "Agenda Permanence");
                 ms.To.Add(TextBox1.Text);
                 ms.Subject = TextBox2.Text;
                 ms.Body = TextBox3.Text;
@@ -47,6 +47,11 @@ namespace Permanence
                 Response.Write(ex);
             }
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
+        }
     }
-    
+
 }

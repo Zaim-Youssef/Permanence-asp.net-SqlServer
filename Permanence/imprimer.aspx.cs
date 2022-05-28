@@ -32,7 +32,7 @@ namespace Permanence
                 dt.Clear();
             }
             string cn = @"Data Source=DESKTOP-IFPTOAR\SQLEXPRESS;Initial Catalog=Permanence;Integrated Security=True";
-                 q = "select * from VSD where 1=1 ";
+                 q = "select * from VSHV1 where 1=1 and VSHV1.nomniveau != 'STANDARD'  ";
 
                 SqlConnection cnx = new SqlConnection(cn);
             if (cnx.State==System.Data.ConnectionState.Open) { cnx.Close(); }
@@ -45,7 +45,10 @@ namespace Permanence
             {
                 q += "and [nomentity] = '" + TextBox2.Text + "'";
             }
-
+            if (CheckBox3.Checked)
+            {
+                q += "and [dateag] = '" + TextBox3.Text + "'";
+            }
             SqlCommand cmd = new SqlCommand(q, cnx);
             
             rd = cmd.ExecuteReader();
@@ -59,7 +62,7 @@ namespace Permanence
             recherche();
             ReportViewer1.Focus();
             ReportViewer1.ProcessingMode = ProcessingMode.Local;
-            ReportViewer1.LocalReport.ReportPath = Server.MapPath("Reportagent.rdlc");
+            ReportViewer1.LocalReport.ReportPath = Server.MapPath("Report1.rdlc");
             ReportViewer1.LocalReport.DataSources.Clear();
             ReportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", rd));
             ReportViewer1.LocalReport.Refresh();
@@ -75,6 +78,11 @@ namespace Permanence
             //    }
             Response.Redirect("smtp2.aspx");
 
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Permanence
         {
             //Panel1.Visible = false;
             m = (string)Session["agent"];
-            Label3.Text =m;
+            
             if (Global.globalvadmin == "admin")
             {
                 afficheragentconnecter();
@@ -124,7 +124,7 @@ namespace Permanence
                     Global.cnx.Close();
                 }
                 Global.cnx.Open();
-                reqintial = @"select g.matricule ,g.nomagent ,g.prenomagent,chefdep_id as 'chef dep' ,g.telagent,g.adresse  ,f.nomf ,e.nomentity ,'' as 'HISTORIQUE AGENT','' as 'AJOUTER AGENT'from  agent g, Entity e, fonction f   where     g.Ide = e.ident    and f.idf =g.idf  and 1=1";
+                reqintial = @"select g.matricule as 'MATRICULE' ,g.nomagent AS 'NOM',g.prenomagent AS'PRENOM',chefdep_id as ' CODE_CHEF' ,g.telagent AS 'TEL' ,g.adresse  AS 'ADRESSE',f.nomf 'FONCTION',e.nomentity AS 'ENTITE','' as 'HISTORIQUE AGENT','' as 'AJOUTER AGENDA'from  agent g, Entity e, fonction f   where     g.Ide = e.ident    and f.idf =g.idf  and 1=1";
 
                 if (CheckBox1.Checked)
                 {
@@ -194,7 +194,7 @@ namespace Permanence
                     Global.cnx.Close();
                 }
                 Global.cnx.Open();
-                string ag = @"select g.matricule ,g.nomagent ,g.prenomagent,chefdep_id as 'chef dep' ,g.telagent,g.adresse  ,f.nomf ,e.nomentity ,'' as 'HISTORIQUE AGENT','' as 'AJOUTER AGENT'from  agent g, Entity e, fonction f   where     g.Ide = e.ident    and f.idf =g.idf  and 1=1";
+                string ag = @"select g.matricule as 'MATRICULE' ,g.nomagent AS 'NOM',g.prenomagent AS'PRENOM',chefdep_id as ' CODE_CHEF' ,g.telagent AS 'TEL' ,g.adresse  AS 'ADRESSE',f.nomf 'FONCTION',e.nomentity AS 'ENTITE','' as 'HISTORIQUE AGENT','' as 'AJOUTER AGENT'from  agent g, Entity e, fonction f   where     g.Ide = e.ident    and f.idf =g.idf  and 1=1";
 
 
 
@@ -228,6 +228,13 @@ namespace Permanence
         protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void Button2_Click1(object sender, EventArgs e)
+        {
+            Global.globalvadmin = "admin";
+
+            Response.Redirect("inscription.aspx");
         }
     }
 }

@@ -53,7 +53,6 @@
 
       </li>
         <li>
-            <asp:HyperLink ID="HyperLink1" runat="server" OnClick="hyperlink" NavigateUrl="~/connexionpage.aspx">HyperLink</asp:HyperLink>
         </li>
   
          </ul>
@@ -66,7 +65,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; <%: DateTime.Now.Year %> -  APPLICATION DE GESTION DES AGENDAS DE PERMANENCES </p>
             </footer>
         </div>
     </form>

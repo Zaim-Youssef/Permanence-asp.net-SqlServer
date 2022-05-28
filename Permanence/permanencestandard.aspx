@@ -20,8 +20,8 @@
                 </li>
                 <li class="nav-item">
 
-                    <asp:LinkButton ID="LinkButton2" runat="server" Font-Bold="True"
-                        Font-Size="9pt" OnClick="redirectpu"> Permanence Urgente
+                    <asp:LinkButton ID="LinkButton2" runat="server" 
+                       OnClick="redirectpu" ForeColor="Black"> Permanence Urgente
                     </asp:LinkButton>
                 </li>
 
@@ -34,31 +34,19 @@
 
                 </li>
                                 <li class="nav-item">
-                                     <asp:LinkButton ID="LinkButton1"  Font-Bold="True"
-                        Font-Size="9pt" OnClick="dft" runat="server">AGENT BTN</asp:LinkButton>
+                                     <asp:LinkButton ID="LinkButton1" 
+                        OnClick="dft" runat="server" ForeColor="Black">Liste des Agents</asp:LinkButton>
                                     </li>
             </ul>
         </div>
     </nav>
-    <br />
 
-     <br />
-     <table class="w-100">
-        <tr>
-            <td style="width: 150px; height: 32px;">
-                <asp:Label ID="Label2" runat="server" Text="tableau de bord :"></asp:Label>
-            </td>
-            <td style="width: 188px; height: 32px;">
-                &nbsp;</td>
-            <td style="height: 32px"></td>
-        </tr>
-    </table>
      <br />
      <div class="card-body">         
          <table class="nav-justified">
              <tr>
                  <td style="width: 806px">
-                     <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+                     <asp:Label ID="Label3" runat="server"></asp:Label>
                      <table class="nav-justified">
                          <tr>
                              <td style="width: 153px; height: 24px;">
@@ -139,28 +127,13 @@
     
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h4 class="m-0 font-weight-bold text-primary" style="height: 62px">LISTE DES PERSONNES EN PERMANENCE Standard:</h4>
+            <p class="m-0 font-weight-bold text-primary" style="height: 62px">
+            <asp:Label ID="Label12" runat="server" Font-Size="25px" ForeColor="Black" style="height: 30px" Text="LISTE DES PERSONNES EN PERMANENCE NIVEAU 1 :"></asp:Label>
+            </p>
         </div>
-        <div class="card-body">
-            <table class="w-100">
-                <tr>
-                    <td>
-                        
-                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width: 105px">
-                        &nbsp;</td>
-                    <td style="width: 715px">&nbsp;</td>
-                    <td style="width: 49px">&nbsp;</td>
-                    <td></td>
-                </tr>
-            </table>
-             
-            </div>
+        
         <div class="container">
-                 <asp:GridView ID="GridView1" runat="server"  AllowSorting="True" Style="text-align: center"  CssClass="table  table-bordered table-hover table-responsive" CellPadding="4" Font-Names="Arial" Font-Size="7.5pt" AllowPaging="True" OnPageIndexChanging="GridView1_PageIndexChanging1" OnSorting="GridView1_Sorting" PagerSettings-Mode="NumericFirstLast" ForeColor="#333333" GridLines="None">
+                 <asp:GridView ID="GridView1" runat="server"  AllowSorting="True" Style="text-align: center"  CssClass="table  table-bordered table-hover table-responsive" CellPadding="4" Font-Names="Arial"  Font-Size="8pt" AllowPaging="True" OnPageIndexChanging="GridView1_PageIndexChanging1" OnSorting="GridView1_Sorting" PagerSettings-Mode="NumericFirstLast" ForeColor="#333333" GridLines="None">
                      <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                      <EditRowStyle BackColor="#999999" />
                      <FooterStyle BackColor="#5D7B9D" ForeColor="White" Font-Bold="True" />
@@ -179,5 +152,9 @@
         
     </div>
            </div>
-  
+  <p>
+
+                    <asp:Label ID="Label1" runat="server"></asp:Label>
+                    
+
 </asp:Content>

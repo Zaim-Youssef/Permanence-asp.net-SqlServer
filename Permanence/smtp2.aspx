@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+      <link href="Content/bootstrap.css" rel="stylesheet" />
     <style type="text/css">
 
         .auto-style1 {
@@ -14,9 +15,10 @@
         }
 
         .auto-style2 {
-
-            height: 30px;
-
+            width: 200px;
+        }
+        .auto-style3 {
+            width: 109px;
         }
 
     </style>
@@ -24,13 +26,28 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <table class="auto-style1" border="1" style="background-color: #6699FF">
+             
+        
+          <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <p></p>
+        <div class="card-header py-3" style="height: 86px">
+            <br />
+            <asp:Label ID="Label12" runat="server" Font-Size="25px" ForeColor="Black" style="height: 30px" Text="Envoyer Email :"></asp:Label>
+            <br />
+            </div>
+        </div>
+        
+        <div class="card-body">
+    <div>
+
+            <table class="auto-style1"  >
                 <tr>
                     <td>
                         <asp:Label ID="Label5" runat="server" Text="from"></asp:Label>
                     </td>
-                    <td>
-                        <asp:TextBox ID="TextBox4" runat="server" Width="177px"></asp:TextBox>
+                    <td class="auto-style2">
+                        <asp:TextBox ID="TextBox4" runat="server" Width="190px"></asp:TextBox>
                     </td>
                 </tr>
             <tr>
@@ -41,9 +58,9 @@
 
                 </td>
 
-                <td>
+                <td class="auto-style2">
 
-                    <asp:TextBox ID="TextBox1" runat="server" TextMode="Email" Width="177px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox1" runat="server" TextMode="Email" Width="190px"></asp:TextBox>
 
                 </td>
 
@@ -53,13 +70,13 @@
 
                 <td>
 
-                    <asp:Label ID="Label2" runat="server" Text="Subject"></asp:Label>
+                    <asp:Label ID="Label2" runat="server" Text="Objet"></asp:Label>
 
                 </td>
 
-                <td>
+                <td class="auto-style2">
 
-                    <asp:TextBox ID="TextBox2" runat="server" Width="177px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox2" runat="server" Width="190px"></asp:TextBox>
 
                 </td>
 
@@ -73,9 +90,9 @@
 
                 </td>
 
-                <td>
+                <td class="auto-style2">
 
-                    <asp:TextBox ID="TextBox3" runat="server" Height="76px" TextMode="MultiLine" Width="177px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox3" runat="server" Height="76px" TextMode="MultiLine" Width="190px"></asp:TextBox>
 
                 </td>
 
@@ -89,9 +106,9 @@
 
                 </td>
 
-                <td>
+                <td class="auto-style2">
 
-                    <asp:FileUpload ID="FileUpload1" runat="server" Width="187px" AllowMultiple="true" />
+                    <asp:FileUpload ID="FileUpload1"    runat="server" Width="193px" AllowMultiple="true" />
 
                 </td>
 
@@ -99,12 +116,17 @@
 
             <tr>
 
-                <td class="auto-style2"></td>
+                <td >
+                    <asp:Label ID="lblt" runat="server"></asp:Label>
+                </td>
 
-                <td class="auto-style2">
+                <td class="auto-style2" >
 
-                    <asp:Button ID="Button1" runat="server" Text="Send" OnClick="Button1_Click" />
+                    <asp:Button ID="Button1"  CssClass="btn btn-success"  runat="server" Text="envoyer" OnClick="Button1_Click" Width="80px" />
 
+                </td>
+                <td class="auto-style3">            
+                    <asp:Button ID="Button2" CssClass="btn  btn-danger" runat="server" Text="Retour" OnClick="Button2_Click" Width="74px" />
                 </td>
 
             </tr>
@@ -115,6 +137,10 @@
 
         </div>
         </div>
+            </div>
+              </div>
+            </div>
+        
     </form>
 </body>
 </html>

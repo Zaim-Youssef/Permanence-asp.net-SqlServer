@@ -7,23 +7,6 @@
 <head runat="server">
     <title></title>
     <link href="Content/style.css" rel="stylesheet" />
-    <style type="text/css">
-        .auto-style1 {
-            outline-width: medium;
-            outline-style: none;
-            outline-color: invert;
-            font-size: 16px;
-            color: #fff;
-            cursor: pointer;
-            border-radius: 20px;
-            transition: .3s ease-in-out;
-            border-style: none;
-            border-color: inherit;
-            border-width: medium;
-            margin-bottom: 20px;
-            background-color: #756cef;
-        }
-    </style>
     </head>
 <body>
   
@@ -32,6 +15,7 @@
         <h2>login here</h2>
         <form runat ="server">
             <asp:Label Text="Email" CssClass="lblemail" runat="server" />
+            
             <asp:TextBox runat="server" CssClass="txtemail"  placeholder="entrer login" ID="txtlogin"/>
             <asp:Label Text="Password" CssClass="lblpass" runat="server" />
            
@@ -68,17 +52,18 @@
                     </div>
                 </div>
 
-            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-            <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
-            <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="Label1" runat="server"></asp:Label>
+            <asp:Label ID="Label3" runat="server"></asp:Label>
+            <asp:Label ID="Label4" runat="server"></asp:Label>
             <br />
            
-             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="RegularExpressionValidator" ControlToValidate="txtlogin" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"  Font-Size="9pt" Font-Underline="False" ForeColor="White" SetFocusOnError="True"> veuillez saisir un email valide</asp:RegularExpressionValidator>
+             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="RegularExpressionValidator" ControlToValidate="txtlogin" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"  Font-Size="9pt" Font-Underline="False" ForeColor="White" SetFocusOnError="True">Veuillez saisir un email valide comme suit qwxcty@gmail.com</asp:RegularExpressionValidator>
            
             <br />
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtpw" ErrorMessage="RequiredFieldValidator" Font-Size="9pt" Font-Underline="False" ForeColor="White" SetFocusOnError="True">veuillez saisir un pw </asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtpw" ErrorMessage="RequiredFieldValidator" Font-Size="9pt" Font-Underline="False" ForeColor="White" SetFocusOnError="True">veuillez saisir un mot de passe</asp:RequiredFieldValidator>
             <br />
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"  ControlToValidate = "txtlogin" ErrorMessage="RequiredFieldValidator"  Font-Size="9pt" Font-Underline="False" ForeColor="White">veuillez saisir email</asp:RequiredFieldValidator>
+            <br />
             <br />
             <%--<asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ErrorMessage="RegularExpressionValidator" SetFocusOnError="True"> avoir</asp:RegularExpressionValidator>--%>
         </form>

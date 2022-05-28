@@ -15,8 +15,10 @@ namespace Permanence
         public static DataTable dt = new DataTable();
         public static string q;
         public static SqlDataReader rd;
+      
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             if (!IsPostBack) { 
             afficher();
             }
@@ -29,7 +31,7 @@ namespace Permanence
                     Global.cnx.Close();
                 }
                 Global.cnx.Open();
-                Global.cmd.CommandText = @"select idagenda ,dateag from agenda";
+                Global.cmd.CommandText = @"select idagenda , FORMAT(dbo.agenda.dateag, 'dd/MM/yy') AS dateag from agenda where  semainechar!='1'  and semainechar!='2' and semainechar!='3'";
                 DataTable dtad = new DataTable();
                 dtad.Load(Global.cmd.ExecuteReader());
                 DropDownList1.DataSource = dtad;
@@ -43,7 +45,7 @@ namespace Permanence
             catch (Exception ex)
             {
                 Label4.Text = ex.Message;
-                Label4.Text = " dropdownlist agenda" + ex.Message;
+             
             }
 
             try
@@ -53,7 +55,7 @@ namespace Permanence
                     Global.cnx.Close();
                 }
                 Global.cnx.Open();
-                Global.cmd.CommandText = @"select idagenda ,semainechar from agenda";
+                Global.cmd.CommandText = @"select idagenda ,semainechar from agenda where semainechar!='3' and   semainechar!='1'  and semainechar!='2' ";
                 DataTable dta = new DataTable();
                 dta.Load(Global.cmd.ExecuteReader());
                 DropDownList2.DataSource = dta;
@@ -67,32 +69,10 @@ namespace Permanence
             catch (Exception ex)
             {
               
-                Label4.Text = " dropdownlist agenda" + ex.Message;
+                Label4.Text = " " + ex.Message;
             }
 
-            try
-            {
-                if (Global.cnx.State == System.Data.ConnectionState.Open)
-                {
-                    Global.cnx.Close();
-                }
-                Global.cnx.Open();
-                Global.cmd.CommandText = @"select idagenda ,datefin from agenda";
-                DataTable dta = new DataTable();
-                dta.Load(Global.cmd.ExecuteReader());
-                DropDownList3.DataSource = dta;
-                DropDownList3.DataTextField = "datefin";
-                DropDownList3.DataValueField = "idagenda";
-                DropDownList3.DataBind();
-                Global.cnx.Close();
-
-
-            }
-            catch (Exception ex)
-            {
-               
-                Label4.Text = " dropdownlist agenda" + ex.Message;
-            }
+           
             //try {
             //    if (Global.cnx.State == System.Data.ConnectionState.Open)
             //    {
@@ -124,7 +104,7 @@ namespace Permanence
                 dt.Clear();
             }
             string cn = @"Data Source=DESKTOP-IFPTOAR\SQLEXPRESS;Initial Catalog=Permanence;Integrated Security=True";
-            q = "select * from VSHV1 where 1=1 ";
+            q = "select * from VSHV1 where 1=1 and VSHV1.semainechar!='1'  and VSHV1.semainechar!='2' and VSHV1.nomniveau = 'STANDARD'  ";
 
             SqlConnection cnx = new SqlConnection(cn);
             if (cnx.State == System.Data.ConnectionState.Open) { cnx.Close(); }
@@ -139,7 +119,7 @@ namespace Permanence
             }
             if (CheckBox3.Checked)
             {
-                q += "and dateag between '"+DropDownList1.SelectedItem.ToString() + "' and '"+DropDownList3.SelectedItem.ToString()+"'  ";
+                q += "and dateag ='"+DropDownList1.SelectedItem.ToString()+"'  ";
             }
             if (CheckBox4.Checked)
             {
@@ -167,6 +147,7 @@ namespace Permanence
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+
             Response.Redirect("smtp2.aspx");
         }
       
@@ -195,7 +176,7 @@ namespace Permanence
             //catch (Exception ex)
             //{ Label4.Text = ex.Message + ""; }
             DropDownList2.SelectedValue = DropDownList1.SelectedValue.ToString();
-            DropDownList3.SelectedValue = DropDownList1.SelectedValue.ToString();
+            
         }
 
         protected void DropDownList3_SelectedIndexChanged(object sender, EventArgs e)
@@ -223,8 +204,7 @@ namespace Permanence
             //catch (Exception ex)
             //{ Label4.Text = ex.Message + ""; }
 
-            DropDownList1.SelectedValue = DropDownList3.SelectedValue.ToString();
-            DropDownList2.SelectedValue = DropDownList3.SelectedValue.ToString();
+            
         }
 
         protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
@@ -252,9 +232,19 @@ namespace Permanence
             //catch (Exception ex)
             //{ Label4.Text = ex.Message + ""; }
             DropDownList1.SelectedValue = DropDownList2.SelectedValue.ToString();
-            DropDownList3.SelectedValue = DropDownList2.SelectedValue.ToString();
+            
         }
 
-       
+        protected void redirectps(object sender, EventArgs e)
+        {
+            Response.Redirect("permanencestandard.aspx");
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            Global.globalvadmin = "admin";
+
+            Response.Redirect("Default.aspx");
+        }
     }
 }

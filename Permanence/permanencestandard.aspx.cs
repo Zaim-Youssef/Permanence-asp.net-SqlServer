@@ -113,7 +113,7 @@ namespace Permanence
                     Global.cnx.Close();
                 }
                 Global.cnx.Open();
-                reqintial = @"select p.idpermanence as  'CODE',chefdep_id as 'CHEF DEP',a.dateag as ' DEBUT' ,a.datefin as ' FIN' ,a.semainechar as 'SEMAINE', n.nomniveau as 'NIVEAU'  ,g.nomagent  as 'NOM',g.prenomagent as 'PRENOM',f.nomf as 'FONCTION',p.typepermanence as 'TYPE PERMANENCE' ,e.nomentity as 'ENTITY', p.idagent as 'AGENT',p.affectation as 'AFFECTER','' as 'MODIFIER TACHE' ,'' as 'IMPRIMER' from permanence p, agent g, agenda a, Entity e, fonction f ,niveau n where   n.idniveau=p.codeniveau and p.idagent = g.matricule and g.Ide = e.ident   and a.idagenda = p.idag and f.idf = g.idf and 1=1";
+                reqintial = @"select p.idpermanence as  'CODE',chefdep_id as 'CHEF DEP', FORMAT(a.dateag, 'dd/MM/yy') as ' DEBUT' , FORMAT(a.datefin, 'dd/MM/yy')  as ' FIN' ,a.semainechar as 'SEMAINE', n.nomniveau as 'NIVEAU'  ,g.nomagent  as 'NOM',g.prenomagent as 'PRENOM',f.nomf as 'FONCTION',p.typepermanence as 'TYPE PERMANENCE' ,e.nomentity as 'ENTITY', p.idagent as 'AGENT',p.affectation as 'AFFECTER','' as 'MODIFIER TACHE' ,'' as 'IMPRIMER' from permanence p, agent g, agenda a, Entity e, fonction f ,niveau n where   n.idniveau=p.codeniveau and p.idagent = g.matricule and g.Ide = e.ident   and a.idagenda = p.idag and f.idf = g.idf  and n.idniveau =1 and 1=1";
 
                 if (CheckBox1.Checked)
                 {
@@ -240,7 +240,7 @@ namespace Permanence
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("imprimer");
+            Response.Redirect("Imprimerv2");
         }
     }
     }

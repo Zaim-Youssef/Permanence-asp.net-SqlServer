@@ -115,14 +115,8 @@
                    
                    
                </tr>
-               <tr>
-                   <td style="width: 274px">
-                        &nbsp;</td>
-                   <td style="width: 244px">
-                       </tr>
-               <tr><td style="width: 274px">
-                   &nbsp;</td>
-               </tr>
+              
+               
                 <tr>
                    <td style="width: 274px">
                        <asp:Label ID="Label12"   runat="server" Text="Intervention :  " Font-Bold="True" Font-Size="15px" ForeColor="Black"></asp:Label>
@@ -207,12 +201,12 @@
             <p>
                 <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
            </p>
-              <asp:Label ID="Label16" runat="server" Text="Label"></asp:Label>
-              <asp:Label ID="Label17" runat="server" Text="Label"></asp:Label>
+              <asp:Label ID="Label16" runat="server" Text=""></asp:Label>
+              <asp:Label ID="Label17" runat="server" Text=""></asp:Label>
            <br />
            <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
               <br />
-              <asp:Label ID="Label18" runat="server" Text="Label"></asp:Label>
+              <asp:Label ID="Label18" runat="server" Text=""></asp:Label>
            <br />
               <asp:Label ID="Label6" runat="server" Text=""></asp:Label>
               <br />

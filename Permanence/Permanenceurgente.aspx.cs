@@ -30,7 +30,7 @@ namespace Permanence
         {
             try
             {
-                string req = "select  p.idpermanence as  'PERMANENCE',  au.datedebut as  ' DATE DEBUT',au.datefin as  ' DATE FIN' , n.nomniveau as 'LEVEL' ,p.idagent 'CODE AGENT',g.nomagent  as 'NOM',g.prenomagent as 'PRENOM', p.typepermanence as 'TYPE PERMANENCE',f.nomf as 'FONCTION' , e.nomentity as 'ENTITY',''as 'MODIFIER'  from  fonction f,agent g, permanence p , agendaurgent au  , niveau n ,Entity e where  f.idf = g.idf and g.matricule=p.idagent  and n.idniveau=p.codeniveau and  g.Ide = e.ident and p.idagendaurgence=au.idagendaurg and p.codeniveau between 2 and 3   and 1=1";
+                string req = "select p.idpermanence as  'CODE',chefdep_id as 'CHEF DEP',a.dateag as ' DEBUT' ,a.datefin as ' FIN' ,a.semainechar as 'SEMAINE', n.nomniveau as 'NIVEAU'  ,g.nomagent  as 'NOM',g.prenomagent as 'PRENOM',f.nomf as 'FONCTION',p.typepermanence as 'TYPE PERMANENCE' ,e.nomentity as 'ENTITY', p.idagent as 'AGENT',p.affectation as 'AFFECTER','' as 'MODIFIER TACHE' ,'' as 'IMPRIMER' from permanence p, agent g, agenda a, Entity e, fonction f ,niveau n where   n.idniveau=p.codeniveau and p.idagent = g.matricule and g.Ide = e.ident   and a.idagenda = p.idag and f.idf = g.idf  and n.idniveau between 2 and 3  and 1=1";
                 Global.cmd.CommandText = req;
                 Global.cnx.Open();
                 dt.Load(Global.cmd.ExecuteReader());
@@ -104,7 +104,7 @@ namespace Permanence
                     Global.cnx.Close();
                 }
                 Global.cnx.Open();
-                reqintial = @"select  p.idpermanence as  'PERMANENCE',  au.datedebut as  ' DATE DEBUT',au.datefin as  ' DATE FIN' , n.nomniveau as 'LEVEL' ,p.idagent 'CODE AGENT',g.nomagent  as 'NOM',g.prenomagent as 'PRENOM', p.typepermanence as 'TYPE PERMANENCE',f.nomf as 'FONCTION' , e.nomentity as 'ENTITY',p.affectation,''as 'MODIFIER'  from  fonction f,agent g, permanence p , agendaurgent au  , niveau n ,Entity e where  f.idf = g.idf and g.matricule=p.idagent  and n.idniveau=p.codeniveau and  g.Ide = e.ident and p.idagendaurgence=au.idagendaurg and p.codeniveau between 2 and 3   and 1=1";
+                reqintial = @"select p.idpermanence as  'CODE',chefdep_id as 'CHEF DEP',FORMAT(a.dateag, 'dd/MM/yy') as ' DEBUT' , FORMAT(a.datefin, 'dd/MM/yy')  as ' FIN', n.nomniveau as 'NIVEAU'  ,g.nomagent  as 'NOM',g.prenomagent as 'PRENOM',f.nomf as 'FONCTION',p.typepermanence as 'TYPE PERMANENCE' ,e.nomentity as 'ENTITY', p.idagent as 'AGENT',p.affectation as 'AFFECTER','' as 'MODIFIER TACHE' from permanence p, agent g, agenda a, Entity e, fonction f ,niveau n where   n.idniveau=p.codeniveau and p.idagent = g.matricule and g.Ide = e.ident   and a.idagenda = p.idag and f.idf = g.idf  and n.idniveau between 2 and 3 and 1=1";
 
                 if (CheckBox1.Checked)
                 {
@@ -136,7 +136,7 @@ namespace Permanence
                 {
 
 
-                    reqintial += " and au.datedebut = '" + DateTime.Parse(TextBox6.Text).ToString() + "'  ";
+                    reqintial += " and a.datedebut = '" + DateTime.Parse(TextBox6.Text).ToString() + "'  ";
 
                 }
                 Global.cmd.CommandText = reqintial;
@@ -151,8 +151,8 @@ namespace Permanence
 
                     
 
-                    GridView1.Rows[s].Cells[11].Text = @"<a href= 'AjoutPermanenceAgent?mpa=" + Server.UrlEncode(GridView1.Rows[s].Cells[0].Text) + "'  > MODIFIER </ a >";
-                  
+                    GridView1.Rows[s].Cells[12].Text = @"<a href= 'AjoutPermanenceAgent?mpa=" + Server.UrlEncode(GridView1.Rows[s].Cells[0].Text) + "'  > MODIFIER </ a >";
+                   
 
 
                 }
@@ -191,5 +191,11 @@ namespace Permanence
             Response.Redirect("~/Default.aspx");
         
     }
+
+        protected void Button2_Click1(object sender, EventArgs e)
+        {
+           
+            Response.Redirect("imprimer.aspx");
+        }
     }
 }
